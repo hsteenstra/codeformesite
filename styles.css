@@ -117,7 +117,7 @@ header {
   inset: 0;
   background:
     linear-gradient(120deg, rgba(11, 31, 75, 0.86) 0%, rgba(27, 95, 214, 0.78) 45%, rgba(35, 201, 184, 0.55) 100%),
-    url("cfm_pics/gallery/unnamed-3.jpg") center/cover no-repeat;
+    url("cfm_pics/unnamed-3.jpg") center/cover no-repeat;
   z-index: 0;
 }
 
