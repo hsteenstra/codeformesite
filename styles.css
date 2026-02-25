@@ -747,58 +747,36 @@ header {
     content: none !important;
 }
 
-/* 1. Clean the testimonial container */
-.testimonial-shell {
-    position: relative;                /* keep layout stable */
-    background: #ffffff;               /* solid white background */
-    padding: 30px 25px;                /* space inside the box */
-    border-radius: 12px;               /* rounded corners */
-    max-width: 760px;                  /* match container width */
-    margin: 0 auto;                    /* center horizontally */
-    display: flex;                     /* allows proper layout of text */
-    flex-direction: column;            /* stack text and author vertically */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* subtle shadow for depth */
-}
-
-/* 2. Ensure testimonial text is clean */
-.testimonial-text {
-    position: relative;
-    color: #000;                       /* black text */
-    font-style: normal;                 /* remove italics */
-    margin-bottom: 15px;               /* spacing before author */
-}
-
-/* 3. Remove all decorative symbols */
-.testimonial-shell::before,
-.testimonial-shell::after,
-.testimonial-text::before,
-.testimonial-text::after {
-    content: none !important;
-    background: none !important;
-}
-/* White card behind testimonial */
-.testimonial-shell {
-    background-color: #ffffff;          /* solid white box */
-    padding: 30px 25px;                 /* spacing inside box */
-    border-radius: 12px;                /* rounded corners */
-    max-width: 760px;                   /* fit container */
-    margin: 0 auto;                     /* center horizontally */
+/* White card behind testimonial text */
+.testimonial-card {
+    background-color: #ffffff;           /* solid white box */
+    padding: 30px 25px;                  /* inner spacing */
+    border-radius: 12px;                 /* rounded corners */
+    max-width: 760px;                    /* fit container */
+    margin: 0 auto;                      /* center horizontally */
     box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* subtle shadow */
-    position: relative;                 /* needed for proper layering */
-    z-index: 1;                         /* ensures it’s above other layers */
+    position: relative;                  /* proper stacking */
 }
 
-/* Remove decorative pseudo-elements */
-.testimonial-shell::before,
-.testimonial-shell::after,
-.testimonial-text::before,
-.testimonial-text::after {
-    content: none !important;
-    background: none !important;
-}
-
-/* Make testimonial text readable */
+/* Clean testimonial text */
 .testimonial-text {
-    color: #000;                       /* black text */
+    color: #000;                        /* black text */
     font-style: normal;
 }
+
+/* Clean author */
+.testimonial-author {
+    color: #000;
+    font-weight: 500;
+    margin-top: 15px;
+}
+
+/* Remove any pseudo-elements from card */
+.testimonial-card::before,
+.testimonial-card::after,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;
+    background: none !important;
+}
+
