@@ -776,3 +776,29 @@ header {
     content: none !important;
     background: none !important;
 }
+/* White card behind testimonial */
+.testimonial-shell {
+    background-color: #ffffff;          /* solid white box */
+    padding: 30px 25px;                 /* spacing inside box */
+    border-radius: 12px;                /* rounded corners */
+    max-width: 760px;                   /* fit container */
+    margin: 0 auto;                     /* center horizontally */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* subtle shadow */
+    position: relative;                 /* needed for proper layering */
+    z-index: 1;                         /* ensures it’s above other layers */
+}
+
+/* Remove decorative pseudo-elements */
+.testimonial-shell::before,
+.testimonial-shell::after,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;
+    background: none !important;
+}
+
+/* Make testimonial text readable */
+.testimonial-text {
+    color: #000;                       /* black text */
+    font-style: normal;
+}
