@@ -698,3 +698,17 @@ header {
     box-shadow: none !important;   /* removes any shadows */
     content: none !important;      /* removes pseudo-elements */
 }
+
+.testimonial-shell::before,
+.testimonial-shell::after,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;  /* removes decorative symbols */
+}
+
+.testimonial-shell,
+.testimonial-text {
+    background: none !important; /* removes background in case it's applied */
+    color: inherit;              /* keeps text color */
+    position: relative;          /* keeps layout stable */
+}
