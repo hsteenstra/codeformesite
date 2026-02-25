@@ -678,3 +678,17 @@ header {
 .testimonial-text::after {
     content: none;       /* removes any decorative quotes */
 }
+.quotes-section,
+.testimonial-shell,
+.testimonial-text {
+    background: none !important;
+    position: relative;
+}
+
+.testimonial-text,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;
+    color: inherit;
+    font-style: normal;
+}
