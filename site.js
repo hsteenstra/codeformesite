@@ -20,7 +20,7 @@ revealElements.forEach((el, index) => {
 const navLinks = document.querySelectorAll(".nav-links a");
 const navContainer = document.querySelector(".nav-links");
 const menuToggle = document.querySelector(".menu-toggle");
-const current = window.location.pathname.replace("/", "") || "index.html";
+const current = window.location.pathname.replace("/", "") || "home.html";
 
 navLinks.forEach((link) => {
   const href = link.getAttribute("href");
