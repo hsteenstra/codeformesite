@@ -151,7 +151,7 @@ header {
 .hero-title {
   font-family: "Outfit", "Segoe UI", sans-serif;
   font-size: clamp(2.9rem, 5vw, 4.6rem);
-  color: white; 
+  color: white !important; 
   line-height: 1.02;
   margin: 0;
 }
