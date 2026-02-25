@@ -746,3 +746,33 @@ header {
 .testimonial-text::after {
     content: none !important;
 }
+
+/* 1. Clean the testimonial container */
+.testimonial-shell {
+    position: relative;                /* keep layout stable */
+    background: #ffffff;               /* solid white background */
+    padding: 30px 25px;                /* space inside the box */
+    border-radius: 12px;               /* rounded corners */
+    max-width: 760px;                  /* match container width */
+    margin: 0 auto;                    /* center horizontally */
+    display: flex;                     /* allows proper layout of text */
+    flex-direction: column;            /* stack text and author vertically */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.08); /* subtle shadow for depth */
+}
+
+/* 2. Ensure testimonial text is clean */
+.testimonial-text {
+    position: relative;
+    color: #000;                       /* black text */
+    font-style: normal;                 /* remove italics */
+    margin-bottom: 15px;               /* spacing before author */
+}
+
+/* 3. Remove all decorative symbols */
+.testimonial-shell::before,
+.testimonial-shell::after,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;
+    background: none !important;
+}
