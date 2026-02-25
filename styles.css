@@ -712,3 +712,19 @@ header {
     color: inherit;              /* keeps text color */
     position: relative;          /* keeps layout stable */
 }
+.testimonial-text {
+    position: relative;
+    background: rgba(255, 255, 255, 0.9); /* white box with slight transparency */
+    padding: 20px 25px;                   /* adds space around the text */
+    border-radius: 12px;                   /* makes corners rounded */
+    display: inline-block;                 /* keeps width around text */
+    max-width: 90%;                        /* prevents it from stretching too far */
+    margin: 0 auto;                        /* centers it */
+    font-style: normal;                     /* removes italics if any */
+    color: #000;                            /* text color inside white box */
+}
+
+.testimonial-shell::before,
+.testimonial-shell::after {
+    content: none !important; /* ensures no decorative symbols appear */
+}
