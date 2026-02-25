@@ -692,3 +692,9 @@ header {
     color: inherit;
     font-style: normal;
 }
+.quotes-section,
+.quotes-section * {
+    background: none !important;   /* removes all background colors/images */
+    box-shadow: none !important;   /* removes any shadows */
+    content: none !important;      /* removes pseudo-elements */
+}
