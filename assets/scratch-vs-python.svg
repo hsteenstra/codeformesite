@@ -1,0 +1,37 @@
+<svg width="800" height="420" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#eaf2ff"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b5fd6"/>
+      <stop offset="100%" stop-color="#23c9b8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" rx="28" fill="url(#bg)"/>
+  <g font-family="Outfit, Arial" font-weight="700" fill="#0b1f4b">
+    <text x="140" y="80" font-size="28">Scratch</text>
+    <text x="540" y="80" font-size="28">Python</text>
+  </g>
+  <g>
+    <rect x="70" y="120" width="260" height="70" rx="16" fill="#ffcc70"/>
+    <rect x="70" y="210" width="260" height="70" rx="16" fill="#ffd58a"/>
+    <rect x="70" y="300" width="260" height="70" rx="16" fill="#ffe3b3"/>
+  </g>
+  <g>
+    <rect x="470" y="120" width="260" height="250" rx="20" fill="url(#accent)"/>
+    <g fill="#ffffff" font-family="Plus Jakarta Sans, Arial" font-size="22" font-weight="600">
+      <text x="510" y="175">print("Hello!")</text>
+      <text x="510" y="215">score = 10</text>
+      <text x="510" y="255">if score &gt; 5:</text>
+      <text x="510" y="295">    level = "Next"</text>
+    </g>
+  </g>
+  <g font-family="Plus Jakarta Sans, Arial" font-size="16" fill="#0c1c3c">
+    <text x="90" y="160">Drag &amp; Drop Blocks</text>
+    <text x="90" y="250">Visual Logic</text>
+    <text x="90" y="340">Beginner Friendly</text>
+    <text x="500" y="340" fill="#ffffff">Readable Text Code</text>
+  </g>
+</svg>
