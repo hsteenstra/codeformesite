@@ -667,3 +667,14 @@ header {
   font-size: 24px;
   background: rgba(12, 28, 60, 0.12);
 }
+
+.testimonial-text {
+    position: relative;  /* ensures pseudo-elements can be controlled */
+    background: none;    /* removes any background image */
+    color: inherit;      /* keeps your text color */
+}
+
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none;       /* removes any decorative quotes */
+}
