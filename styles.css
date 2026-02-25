@@ -728,3 +728,21 @@ header {
 .testimonial-shell::after {
     content: none !important; /* ensures no decorative symbols appear */
 }
+.testimonial-shell {
+    position: relative; 
+    background: rgba(255, 255, 255, 0.9); /* white box with slight transparency */
+    padding: 30px 25px;                   /* space inside the box */
+    border-radius: 12px;                   /* rounded corners */
+    display: block;                        /* ensures proper layout */
+    max-width: 760px;                      /* matches your container width */
+    margin: 0 auto;                        /* centers it */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* optional subtle shadow */
+}
+
+/* remove any weird symbols from pseudo-elements */
+.testimonial-shell::before,
+.testimonial-shell::after,
+.testimonial-text::before,
+.testimonial-text::after {
+    content: none !important;
+}
