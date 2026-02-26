@@ -5,105 +5,145 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The History of Python</title>
   <style>
+    /* --- Global Styles --- */
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.7;
       margin: 0;
       padding: 0;
+      background-color: #f5f6f8;
+      color: #1a1a1a;
     }
+
     .container {
       max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      margin: 60px auto;
+      padding: 0 25px;
     }
+
     h1 {
-      color: #1e90ff;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 10px;
       text-align: center;
-      margin-bottom: 5px;
     }
+
     h3 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: #7f8c8d;
       text-align: center;
-      color: #555;
-      font-weight: normal;
-      margin-top: 0;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
+
     h2 {
-      color: #333;
-      margin-top: 30px;
+      font-size: 1.6rem;
+      margin-top: 50px;
+      color: #2c3e50;
+      position: relative;
+      padding-bottom: 8px;
     }
-    .fun-fact {
-      background-color: #fffae6;
-      border-left: 5px solid #ffd700;
-      padding: 10px 15px;
-      margin: 20px 0;
-      border-radius: 8px;
-      font-style: italic;
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: #3498db;
+      margin-top: 5px;
+      border-radius: 2px;
     }
-    .profile-box {
-      background-color: #e0f7ff;
-      border-left: 5px solid #1e90ff;
-      padding: 15px 20px;
-      margin: 20px 0;
-      border-radius: 8px;
-    }
+
     p {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
+      font-size: 1rem;
+      color: #2c3e50;
     }
+
     ul {
-      margin-left: 20px;
+      margin-left: 25px;
+      margin-bottom: 25px;
     }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* --- Fun Fact Box --- */
+    .fun-fact {
+      position: relative;
+      background-color: #ecf0f1;
+      padding: 15px 20px;
+      border-left: 4px solid #3498db;
+      border-radius: 6px;
+      font-style: italic;
+      max-width: 300px;
+      float: right;
+      margin: 10px 0 25px 25px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    /* --- Profile Box --- */
+    .profile-box {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #dfe6e9;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      margin: 25px 0;
+    }
+
+    /* --- Clear Floats --- */
+    .clear {
+      clear: both;
+    }
+
+    /* --- Responsive --- */
+    @media(max-width: 768px){
+      .fun-fact {
+        float: none;
+        max-width: 100%;
+        margin-left: 0;
+      }
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
     <h1>The History of Python</h1>
-    <h3>Discover the story behind the world’s favorite beginner-friendly programming language</h3>
+    <h3>Discover the story behind the programming language that changed coding for beginners and professionals alike</h3>
 
-    <h2>Before Python: The State of Coding in the 1980s</h2>
-    <p>Before Python, programming was often complex and not very beginner-friendly. Popular languages in the 1980s included:</p>
-    <ul>
-      <li><strong>Fortran:</strong> Mainly for scientific and engineering calculations.</li>
-      <li><strong>C:</strong> Powerful, low-level, but tricky for beginners.</li>
-      <li><strong>COBOL:</strong> Used for business applications, very verbose.</li>
-      <li><strong>Basic:</strong> Simple for small programs, often used in schools.</li>
-    </ul>
-    <p>Writing code back then often required remembering strict syntax rules and spending a lot of time debugging errors. Computers were slower, and programming environments weren’t as user-friendly as today’s IDEs (Integrated Development Environments).</p>
-
-    <div class="fun-fact">💾 Fun Fact: In the 1980s, many programmers actually punched their code into <strong>punch cards</strong> or typed it into very basic text editors!</div>
+    <h2>Before Python: Coding in the 1980s</h2>
+    <p>Programming before Python was often strict and unforgiving. Languages like Fortran, COBOL, C, and Basic were widely used, each with their challenges. Developers needed to carefully follow syntax rules, debug manually, and often work with slow computers.</p>
+    <div class="fun-fact">Many programmers in the 1980s used punch cards or simple text editors. Debugging could take hours for small mistakes.</div>
+    <div class="clear"></div>
 
     <h2>The Birth of Python</h2>
-    <p>In December 1989, <strong>Guido van Rossum</strong> began working on a new programming language during his time at <em>CWI (Centrum Wiskunde & Informatica)</em> in the Netherlands. He wanted a language that:</p>
-    <ul>
-      <li>Was easy to read and write.</li>
-      <li>Had clear and simple syntax.</li>
-      <li>Could be used for a variety of tasks, from small scripts to larger software projects.</li>
-    </ul>
-    <p>Python was officially released in 1991. It quickly gained attention because it combined simplicity with power, allowing beginners and experienced programmers alike to write effective code without frustration.</p>
-
-    <div class="fun-fact">🐍 Fun Fact: Python is named after the comedy show <strong>Monty Python’s Flying Circus</strong>, not the snake!</div>
+    <p>In December 1989, Guido van Rossum started working on a new language at CWI in the Netherlands. His goal was to create a language that was easy to read, versatile, and could be used for small scripts or large projects alike. Python was officially released in 1991 and immediately gained attention for its simplicity and readability.</p>
+    <div class="fun-fact">Python’s name comes from the comedy show Monty Python’s Flying Circus, not the snake.</div>
+    <div class="clear"></div>
 
     <h2>About the Founder</h2>
     <div class="profile-box">
-      <p><strong>Guido van Rossum</strong> is often called the “Benevolent Dictator For Life” (BDFL) of Python. Born in 1956 in the Netherlands, he worked on programming languages and software development for decades. His vision for Python was to create a language that emphasized readability and simplicity, making coding more approachable for everyone.</p>
+      <p><strong>Guido van Rossum</strong>, born in 1956 in the Netherlands, worked on programming languages and software development for decades. He is often referred to as Python’s “Benevolent Dictator for Life.” His vision emphasized readability, simplicity, and making coding accessible to everyone.</p>
     </div>
 
     <h2>Python’s Evolution</h2>
-    <p>Python has undergone major updates since its creation:</p>
+    <p>Python has evolved through major versions:</p>
     <ul>
-      <li><strong>Python 2 (2000):</strong> Introduced many features but eventually phased out due to incompatibilities.</li>
-      <li><strong>Python 3 (2008):</strong> Modernized the language with better Unicode support, cleaner syntax, and improvements in standard libraries.</li>
+      <li><strong>Python 2 (2000):</strong> Widely used, but eventually replaced due to incompatibilities.</li>
+      <li><strong>Python 3 (2008):</strong> Modernized the language with better Unicode support, cleaner syntax, and more powerful libraries.</li>
     </ul>
-    <p>Today, Python is used in web development, data science, AI, education, and more. Its simplicity allows beginners to learn coding quickly, while experts use it to create complex applications.</p>
-
-    <div class="fun-fact">💡 Fun Fact: Python has its own mascot: a cute cartoon snake named “Python”! 🐍</div>
+    <div class="fun-fact">Python can be used for web development, AI, data science, automation, and even creating games.</div>
+    <div class="clear"></div>
 
     <h2>Why Python Matters</h2>
-    <p>Python’s design philosophy, “readability counts,” made programming more accessible. It sparked a new era where learning to code was not just for experts. Python tutorials, beginner courses, and community projects continue to make it one of the most popular languages in the world.</p>
+    <p>Python’s philosophy of “readability counts” has transformed programming. It allowed beginners to learn coding without frustration and enabled professionals to build complex applications efficiently. Today, Python remains one of the most popular languages worldwide.</p>
+    <div class="fun-fact">Many online courses and tutorials use Python as the first programming language for beginners.</div>
+    <div class="clear"></div>
 
-    <div class="fun-fact">✨ Fun Fact: Python is so versatile that it can be used for games, websites, robots, AI, and even music! 🎵</div>
   </div>
 </body>
 </html>
