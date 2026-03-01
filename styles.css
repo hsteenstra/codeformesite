@@ -831,4 +831,41 @@ header {
     content: none !important;
     background: none !important;
 }
+/* Quote Box Styling */
+.quote-box {
+  background-color: white;
+  color: #0f172a; /* Dark text for readability */
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-style: italic;
+  max-width: 700px;
+  margin: 20px auto; /* center on the page */
+  position: relative;
+  line-height: 1.6;
+  transition: transform 0.3s ease;
+}
+
+.quote-box:hover {
+  transform: translateY(-4px);
+}
+
+/* Optional: Add quote marks using pseudo-element */
+.quote-box::before {
+  content: "“";
+  font-size: 2.5rem;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  color: #3b82f6; /* optional accent color */
+}
+
+.quote-box::after {
+  content: "”";
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  color: #3b82f6;
+}
 
