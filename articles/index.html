@@ -1,44 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Articles | Code For ME</title>
-<link rel="stylesheet" href="../styles.css">
-</head>
-<body>
-<header class="nav">
-  <div class="nav-inner container">
-    <a class="brand" href="../index.html">Code For ME</a>
-    <nav class="nav-links">
-      <a href="../index.html">Home</a>
-      <a href="index.html" class="active">Articles</a>
-      <a href="../resources.html">Resources</a>
-      <a class="nav-cta" href="#join">Join Us</a>
-    </nav>
-    <button class="menu-toggle" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Articles | Code For ME</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <a class="brand" href="../index.html">
+          <img class="logo-img" src="../assets/logo.png" alt="Code For ME logo" />
+          <span>Code For ME</span>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="index.html" class="active">Articles</a>
+          <a href="../resources.html">Resources</a>
+          <a href="#codecourse">CodeCourse</a>
+        </nav>
+        <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join Our List</a>
+      </div>
+    </header>
 
-<section class="articles-hero container">
-  <h1>All Articles</h1>
-  <p>Explore our curated coding articles, essays, and career advice for students of all levels.</p>
-</section>
+    <main class="container">
+      <section class="articles-hero">
+        <h1>Explore Our Articles</h1>
+        <p>Dive into coding tips, tech history, and advice for building your skills and your future.</p>
+      </section>
 
-<section class="articles-list container">
-  <a href="cs-careers.html" class="article-card">
-    <h3>CS Careers</h3>
-    <p>Explore the most promising computer science careers and learn how to get started today.</p>
-  </a>
-  <a href="history-of-python.html" class="article-card">
-    <h3>The History of Python</h3>
-    <p>Discover how Python evolved into one of the most popular programming languages in the world.</p>
-  </a>
-</section>
+      <section class="articles-grid">
+        <a href="cs-careers.html" class="article-card">
+          <h2>CS Careers: Where Can Coding Take You?</h2>
+          <p>Discover the most exciting computer science careers, what they involve, and how you can start preparing now.</p>
+        </a>
 
-</body>
+        <a href="history-of-python.html" class="article-card">
+          <h2>The History of Python</h2>
+          <p>Trace the journey of Python from a small scripting language to one of the most popular languages in the world.</p>
+        </a>
+      </section>
+    </main>
+  </body>
 </html>
