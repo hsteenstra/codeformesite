@@ -181,7 +181,6 @@ body{
     left:20px;
   }
 }
-
 </style>
 </head>
 <body>
@@ -196,43 +195,95 @@ body{
 <div class="timeline">
   <div class="progress-line" id="progress"></div>
 
+  <!-- 1980s -->
   <div class="timeline-item left">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <h2>1980s Programming</h2>
-      <p>Before Python, developers relied on Fortran, COBOL, C, and BASIC. Syntax was rigid and debugging was slow.</p>
+      <p>Before Python, developers relied on Fortran, COBOL, C, and BASIC. Syntax was rigid and debugging was slow. Programming demanded deep attention to detail, and mistakes could be costly and time-consuming.</p>
     </div>
   </div>
 
+  <!-- 1989 -->
   <div class="timeline-item right">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <h2>1989 – The Idea</h2>
-      <p>Guido van Rossum began designing Python at CWI in the Netherlands, aiming for readability and simplicity.</p>
+      <p>Guido van Rossum began designing Python at CWI in the Netherlands. His goal was to create a language that prioritized readability, simplicity, and flexibility while remaining powerful enough for professionals.</p>
     </div>
   </div>
 
+  <!-- 1991 -->
   <div class="timeline-item left">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <h2>1991 – Official Launch</h2>
-      <p>Python was released publicly, introducing clean indentation-based syntax and powerful libraries.</p>
+      <p>Python was released publicly, introducing clean indentation-based syntax. Its standard library and built-in data types allowed developers to focus on solving problems rather than boilerplate code.</p>
     </div>
   </div>
 
+  <!-- 2000 -->
   <div class="timeline-item right">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <h2>2000 – Python 2</h2>
-      <p>Major improvements expanded Python’s usability, but compatibility issues eventually emerged.</p>
+      <p>Major improvements expanded Python’s usability, but compatibility issues eventually emerged. Features like list comprehensions and garbage collection gained popularity.</p>
     </div>
   </div>
 
+  <!-- 2008 -->
   <div class="timeline-item left">
     <div class="timeline-dot"></div>
     <div class="timeline-content">
       <h2>2008 – Python 3</h2>
-      <p>A modernized version introduced cleaner syntax and better Unicode support, securing Python’s future.</p>
+      <p>A modernized version introduced cleaner syntax, improved Unicode support, and standardized libraries. Python 3 set the stage for long-term growth and modern application development.</p>
+    </div>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="timeline-item right">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>Python’s Philosophy</h2>
+      <p>Python was designed around the principle: readability counts. "The Zen of Python" by Tim Peters emphasizes simplicity, clarity, and explicitness. Python focuses on human understanding over complex syntax.</p>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="timeline-item left">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>Rise in Education</h2>
+      <p>Python quickly became a favorite in schools and universities. Its clear syntax allows beginners to learn programming logic without being overwhelmed by formatting rules, making it ideal for introductory courses.</p>
+    </div>
+  </div>
+
+  <!-- Modern usage -->
+  <div class="timeline-item right">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>Powering Modern Technology</h2>
+      <p>Today, Python powers AI, machine learning, cybersecurity, data science, and web applications. Frameworks like Django and Flask enable web development, while libraries such as NumPy, Pandas, and TensorFlow drive innovation and research.</p>
+    </div>
+  </div>
+
+  <!-- Global impact -->
+  <div class="timeline-item left">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>Global Impact</h2>
+      <p>Python consistently ranks among the most popular programming languages worldwide. Its open-source community contributes thousands of libraries and tools, ensuring continuous innovation and adaptability across industries.</p>
+    </div>
+  </div>
+
+  <!-- Code For ME -->
+  <div class="timeline-item right">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>What We Teach at Code For ME</h2>
+      <p>At <strong>Code For ME</strong>, students learn Python as a foundation for real-world problem solving. Our curriculum focuses on computational thinking, logic, and modern development practices.</p>
+      <p>We teach project-based learning, automation, creative coding challenges, and essential programming skills. Students gain the confidence and knowledge to explore AI, app development, data science, and more.</p>
+      <p>Python acts as a gateway to technology careers, and Code For ME ensures that learning is both engaging and practical.</p>
     </div>
   </div>
 
@@ -258,9 +309,8 @@ const progress = document.getElementById("progress");
 window.addEventListener("scroll",()=>{
   const timeline = document.querySelector(".timeline");
   const rect = timeline.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
   const totalHeight = timeline.offsetHeight;
-  const visible = windowHeight - rect.top;
+  const visible = window.innerHeight - rect.top;
   const percent = Math.min(Math.max(visible / totalHeight,0),1);
   progress.style.height = percent * 100 + "%";
 });
