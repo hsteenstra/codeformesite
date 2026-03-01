@@ -3,189 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The History of Python</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<title>The Evolution of Python</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+
 <style>
-  /* --- Global Styles --- */
-  body {
-    font-family: 'Inter', Arial, sans-serif;
-    line-height: 1.75;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f5f7;
-    color: #222;
-    scroll-behavior: smooth;
+:root{
+  --bg:#0f172a;
+  --bg2:#1e293b;
+  --text:white;
+  --accent:#3b82f6;
+  --glass:rgba(255,255,255,0.08);
+}
+
+.light{
+  --bg:#f1f5f9;
+  --bg2:#ffffff;
+  --text:#0f172a;
+  --glass:rgba(0,0,0,0.05);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at 20% 20%, var(--bg2), var(--bg));
+  color:var(--text);
+  overflow-x:hidden;
+  transition:.4s ease;
+}
+
+/* ===== Floating Toggle ===== */
+.toggle{
+  position:fixed;
+  top:20px;
+  right:25px;
+  background:var(--glass);
+  backdrop-filter:blur(12px);
+  padding:10px 18px;
+  border-radius:30px;
+  cursor:pointer;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  z-index:1000;
+  transition:.3s;
+}
+
+.toggle:hover{
+  transform:scale(1.05);
+}
+
+/* ===== Hero ===== */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+}
+
+.hero h1{
+  font-size:4rem;
+  font-weight:900;
+  background:linear-gradient(90deg,#60a5fa,#a78bfa,#3b82f6);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.2rem;
+  opacity:.8;
+  max-width:600px;
+}
+
+/* ===== Timeline ===== */
+.timeline{
+  position:relative;
+  max-width:1100px;
+  margin:0 auto;
+  padding:80px 0;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:4px;
+  height:100%;
+  background:rgba(255,255,255,0.1);
+}
+
+.progress-line{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  width:4px;
+  height:0;
+  background:var(--accent);
+  top:0;
+  transition:height .2s ease;
+}
+
+/* ===== Timeline Item ===== */
+.timeline-item{
+  position:relative;
+  width:50%;
+  padding:40px;
+}
+
+.timeline-item.left{
+  left:0;
+  text-align:right;
+}
+
+.timeline-item.right{
+  left:50%;
+}
+
+.timeline-content{
+  background:var(--glass);
+  backdrop-filter:blur(15px);
+  padding:30px;
+  border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,.3);
+  transition:.5s;
+  opacity:0;
+  transform:translateY(40px);
+}
+
+.timeline-content.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.timeline-content:hover{
+  transform:translateY(-8px);
+}
+
+.timeline-dot{
+  position:absolute;
+  top:50px;
+  width:18px;
+  height:18px;
+  background:var(--accent);
+  border-radius:50%;
+  left:50%;
+  transform:translateX(-50%);
+  box-shadow:0 0 20px var(--accent);
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .timeline::before,
+  .progress-line{
+    left:20px;
   }
 
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 25px;
+  .timeline-item{
+    width:100%;
+    padding-left:60px;
+    text-align:left !important;
   }
 
-  h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    text-align: center;
-    color: #1f2a38;
-    margin-bottom: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
+  .timeline-item.right{
+    left:0;
   }
 
-  h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
-    text-align: center;
-    color: #555;
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease 0.3s;
+  .timeline-dot{
+    left:20px;
   }
+}
 
-  h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: #1f2a38;
-    margin-top: 60px;
-    margin-bottom: 20px;
-    position: relative;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-  }
-
-  h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #3498db;
-    margin-top: 6px;
-    border-radius: 2px;
-  }
-
-  p {
-    margin-bottom: 25px;
-    font-size: 1rem;
-    color: #333;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-  }
-
-  ul {
-    margin-left: 20px;
-    margin-bottom: 25px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-  }
-
-  li {
-    margin-bottom: 10px;
-  }
-
-  /* --- Fun Fact Card --- */
-  .fun-fact {
-    background-color: #ffffff;
-    border-left: 4px solid #3498db;
-    padding: 18px 22px;
-    border-radius: 8px;
-    margin: 25px 0;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    font-style: italic;
-    max-width: 450px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-  }
-
-  .profile-box {
-    background-color: #ffffff;
-    padding: 25px 30px;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
-    margin: 40px 0;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 1s ease;
-  }
-
-  /* --- Scroll Reveal --- */
-  .reveal {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  @media(max-width:768px){
-    .fun-fact {
-      max-width: 100%;
-    }
-  }
 </style>
 </head>
 <body>
 
-<div class="container">
-  <h1 class="reveal">The History of Python</h1>
-  <h3 class="reveal">Discover the evolution of the programming language that revolutionized coding for beginners and experts alike</h3>
+<div class="toggle" onclick="toggleTheme()">Toggle Mode</div>
 
-  <h2 class="reveal">Before Python: Coding in the 1980s</h2>
-  <p class="reveal">In the 1980s, programming required meticulous attention to syntax and detail. Developers relied on languages such as Fortran, COBOL, C, and Basic. Each language served specific domains, from scientific computation to business applications, yet all demanded a deep understanding of machine logic and offered minimal guidance for readability.</p>
+<section class="hero">
+  <h1>The Evolution of Python</h1>
+  <p>An animated journey through the creation and transformation of one of the world's most powerful programming languages.</p>
+</section>
 
-  <div class="fun-fact reveal">Programmers often used punch cards or rudimentary text editors. Debugging could take hours, as even small errors were hard to detect without modern tools.</div>
+<div class="timeline">
+  <div class="progress-line" id="progress"></div>
 
-  <h2 class="reveal">The Birth of Python</h2>
-  <p class="reveal">In December 1989, Guido van Rossum, while working at the Centrum Wiskunde & Informatica (CWI) in the Netherlands, began developing a new programming language. His vision emphasized clarity, simplicity, and flexibility, aiming to bridge the gap between novice accessibility and professional utility. Python officially debuted in 1991, quickly distinguishing itself through its elegant syntax and readability.</p>
-
-  <div class="fun-fact reveal">Python’s name is inspired by the British comedy series <strong>Monty Python’s Flying Circus</strong>, reflecting Guido’s sense of humor rather than the reptile.</div>
-
-  <h2 class="reveal">About the Founder</h2>
-  <div class="profile-box reveal">
-    <p><strong>Guido van Rossum</strong>, born in 1956 in the Netherlands, is the principal architect of Python. Often referred to as the “Benevolent Dictator for Life” (BDFL), van Rossum’s guiding philosophy for Python focused on readability, simplicity, and community-driven development. His work has fundamentally shaped how programming is taught and applied globally.</p>
+  <div class="timeline-item left">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>1980s Programming</h2>
+      <p>Before Python, developers relied on Fortran, COBOL, C, and BASIC. Syntax was rigid and debugging was slow.</p>
+    </div>
   </div>
 
-  <h2 class="reveal">Python’s Evolution</h2>
-  <p class="reveal">Python has undergone transformative updates, most notably:</p>
-  <ul class="reveal">
-    <li><strong>Python 2 (2000):</strong> Offered significant features but eventually faced compatibility challenges.</li>
-    <li><strong>Python 3 (2008):</strong> Introduced cleaner syntax, better Unicode support, and expanded standard libraries, solidifying Python’s modern prominence.</li>
-  </ul>
+  <div class="timeline-item right">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>1989 – The Idea</h2>
+      <p>Guido van Rossum began designing Python at CWI in the Netherlands, aiming for readability and simplicity.</p>
+    </div>
+  </div>
 
-  <div class="fun-fact reveal">Python’s versatility spans web development, artificial intelligence, scientific research, automation, and education, underscoring its enduring relevance.</div>
+  <div class="timeline-item left">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>1991 – Official Launch</h2>
+      <p>Python was released publicly, introducing clean indentation-based syntax and powerful libraries.</p>
+    </div>
+  </div>
 
-  <h2 class="reveal">Why Python Matters</h2>
-  <p class="reveal">Python’s principle that “readability counts” democratized programming. It empowers learners, enhances collaboration, and accelerates innovation. From introductory courses to cutting-edge research, Python remains a cornerstone of contemporary programming practice.</p>
+  <div class="timeline-item right">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>2000 – Python 2</h2>
+      <p>Major improvements expanded Python’s usability, but compatibility issues eventually emerged.</p>
+    </div>
+  </div>
 
-  <div class="fun-fact reveal">Today, Python is consistently ranked among the most popular programming languages worldwide, reflecting both its simplicity and expansive capabilities.</div>
+  <div class="timeline-item left">
+    <div class="timeline-dot"></div>
+    <div class="timeline-content">
+      <h2>2008 – Python 3</h2>
+      <p>A modernized version introduced cleaner syntax and better Unicode support, securing Python’s future.</p>
+    </div>
+  </div>
+
 </div>
 
 <script>
-  // Scroll Reveal Animation
-  function revealOnScroll() {
-    const elements = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
-    elements.forEach(el => {
-      const elementTop = el.getBoundingClientRect().top;
-      const elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
-        el.classList.add('active');
-      } else {
-        el.classList.remove('active');
-      }
-    });
-  }
+/* Scroll Animation */
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{threshold:.3});
 
-  window.addEventListener('scroll', revealOnScroll);
-  window.addEventListener('load', revealOnScroll);
+document.querySelectorAll(".timeline-content").forEach(el=>{
+  observer.observe(el);
+});
+
+/* Scroll Progress Line */
+const progress = document.getElementById("progress");
+
+window.addEventListener("scroll",()=>{
+  const timeline = document.querySelector(".timeline");
+  const rect = timeline.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+  const totalHeight = timeline.offsetHeight;
+  const visible = windowHeight - rect.top;
+  const percent = Math.min(Math.max(visible / totalHeight,0),1);
+  progress.style.height = percent * 100 + "%";
+});
+
+/* Theme Toggle */
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
 </script>
 
 </body>
