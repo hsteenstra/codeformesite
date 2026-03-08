@@ -1,56 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Articles | Code For ME</title>
-    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="container navbar">
-        <a class="brand" href="../index.html">
-          <img class="logo-img" src="../assets/logo.png" alt="Code For ME logo" />
-          <span>Code For ME</span>
-        </a>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="nav-links">
-          <a href="../index.html">Home</a>
-          <a href="index.html" class="active">Articles</a>
-          <a href="../resources.html">Resources</a>
-          <a href="#codecourse">CodeCourse</a>
-        </nav>
-        <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join Our List</a>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code For ME - Articles</title>
+  <link rel="icon" href="assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family:'Plus Jakarta Sans', sans-serif; margin:0; background:#fdfdfd; color:#222; }
+    .navbar { display:flex; justify-content:space-between; align-items:center; padding:20px; max-width:1200px; margin:auto; }
+    .navbar .brand { font-family:'Outfit', sans-serif; font-weight:700; font-size:1.2em; color:#1a73e8; text-decoration:none; }
+    .nav-links a { margin-left:20px; text-decoration:none; color:#555; font-weight:600; }
+    .nav-cta { background:#1a73e8; color:#fff; padding:8px 16px; border-radius:5px; text-decoration:none; font-weight:600; }
+
+    /* HERO */
+    .hero { text-align:center; padding:100px 20px 60px; background:linear-gradient(135deg,#1a73e8,#4dabf7); color:#fff; }
+    .hero h1 { font-family:'Outfit', sans-serif; font-size:3em; margin-bottom:20px; }
+    .hero p { font-size:1.2em; max-width:600px; margin:auto; }
+
+    /* ARTICLE CARDS */
+    .articles-grid { display:flex; flex-direction:column; gap:40px; max-width:900px; margin:50px auto; padding:0 20px; }
+    .article-card { padding:30px 25px; background:#fff; border-radius:15px; box-shadow:0 8px 20px rgba(0,0,0,0.05); transition:transform 0.3s ease, box-shadow 0.3s ease; cursor:pointer; }
+    .article-card:hover { transform:translateY(-5px); box-shadow:0 15px 30px rgba(0,0,0,0.1); }
+    .article-card h2 { font-family:'Outfit', sans-serif; font-size:1.8em; color:#1a73e8; margin-bottom:10px; }
+    .article-card p { color:#555; margin-bottom:15px; }
+    .article-card a { color:#1a73e8; font-weight:600; text-decoration:none; }
+    .article-card a:hover { color:#155ab6; }
+
+    footer { background:#f9f9f9; padding:50px 20px; }
+    .footer-grid { display:flex; flex-wrap:wrap; gap:30px; max-width:1200px; margin:auto; }
+    .footer-grid div { flex:1; min-width:200px; }
+    .footer h4 { margin-bottom:12px; font-weight:600; }
+    .footer a { color:#1a73e8; text-decoration:none; }
+    .footer a:hover { text-decoration:underline; }
+
+    @media(max-width:600px){.hero h1{font-size:2em;}.hero p{font-size:1em;}.navbar{flex-direction:column;gap:10px;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">Code For ME</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="meet-the-team.html">Meet The Team</a>
+        <a href="photo-gallery.html">Gallery</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8">Join Our List</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Explore Coding & STEM Articles</h1>
+    <p>Learn about coding history, exciting CS careers, and inspiring women in STEM through our featured articles.</p>
+  </section>
+
+  <section class="articles-grid">
+    <div class="article-card" onclick="location.href='cs-careers.html';">
+      <h2>CS Careers</h2>
+      <p>Explore computer science career paths, what they entail, and how to get started in the tech industry.</p>
+      <a href="cs-careers.html">Read Article →</a>
+    </div>
+    <div class="article-card" onclick="location.href='history-of-python.html';">
+      <h2>History of Python</h2>
+      <p>Discover the story behind Python, why it became so popular, and its impact on modern programming.</p>
+      <a href="history-of-python.html">Read Article →</a>
+    </div>
+    <div class="article-card" onclick="location.href='women-in-stem.html';">
+      <h2>Women in STEM</h2>
+      <p>Learn about the incredible women who shaped science, technology, engineering, and math throughout history.</p>
+      <a href="women-in-stem.html">Read Article →</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Code For ME" style="width:50px;margin-bottom:10px;">
+        <p>Free Python Coding Camp For Students. For Local. From Local.</p>
       </div>
-    </header>
-
-    <main class="container">
-      <section class="articles-hero">
-        <h1>Explore Our Articles</h1>
-        <p>Dive into coding tips, tech history, and advice for building your skills and your future.</p>
-      </section>
-
-      <section class="articles-grid">
-        <a href="cs-careers.html" class="article-card">
-          <h2>CS Careers: Where Can Coding Take You?</h2>
-          <p>Discover the most exciting computer science careers, what they involve, and how you can start preparing now.</p>
-        </a>
-
-        <a href="history-of-python.html" class="article-card">
-          <h2>The History of Python</h2>
-          <p>Trace the journey of Python from a small scripting language to one of the most popular languages in the world.</p>
-        </a>
-      </section>
-    </main>
-  </body>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <p><a href="resources/what-is-python.html">What Is Python?</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
