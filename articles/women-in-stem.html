@@ -1,66 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Women in STEM</title>
-  <style>
-    * { box-sizing: border-box; margin:0; padding:0; }
-    body { font-family: 'Helvetica Neue', Arial, sans-serif; background: #fdfdfd; color: #333; line-height: 1.6; }
-    .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-    h1 { text-align: center; font-size: 2.5em; margin-bottom: 20px; color: #222; }
-    p.subtitle { text-align: center; font-size: 1.2em; margin-bottom: 50px; color: #555; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .card { background: #fff; border-radius: 15px; padding: 30px 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
-    .card h2 { font-size: 1.5em; margin-bottom: 10px; color: #1a73e8; }
-    .card p { font-size: 1em; color: #555; margin-bottom: 10px; }
-    .card::before { content: ''; display: block; width: 50px; height: 4px; background: #1a73e8; margin-bottom: 15px; border-radius: 2px; }
-    @media (max-width: 600px) { h1 { font-size: 2em; } p.subtitle { font-size: 1em; } }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Women in STEM</h1>
-    <p class="subtitle">Celebrating brilliant women who shaped science, technology, engineering, and math.</p>
-    
-    <div class="grid">
-      <div class="card">
-        <h2>Ada Lovelace</h2>
-        <p><strong>1815 – 1852</strong></p>
-        <p>Daughter of poet Lord Byron, Ada Lovelace combined imagination with mathematics to write the first algorithm for Charles Babbage’s Analytical Engine. She foresaw the potential for machines to go beyond calculations, making her the world’s first computer programmer and a visionary for modern computing.</p>
-      </div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Code For ME - [Article Title]</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-      <div class="card">
-        <h2>Marie Curie</h2>
-        <p><strong>1867 – 1934</strong></p>
-        <p>Marie Curie was a pioneering physicist and chemist who discovered the elements polonium and radium. She was the first woman to win a Nobel Prize and remains the only person to win Nobel Prizes in two different sciences—Physics and Chemistry. Her work on radioactivity laid the foundation for cancer treatment and nuclear physics.</p>
-      </div>
+    <style>
+      /* GENERAL RESET */
+      * { box-sizing: border-box; margin:0; padding:0; }
+      body { font-family: 'Plus Jakarta Sans', sans-serif; color: #333; line-height: 1.7; background: #fdfdfd; }
 
-      <div class="card">
-        <h2>Janaki Ammal</h2>
-        <p><strong>1897 – 1984</strong></p>
-        <p>Janaki Ammal was an Indian botanist and cytogeneticist known for her groundbreaking research in plant genetics and breeding. Her work helped improve crop resilience and agricultural diversity. She also contributed to botanical taxonomy, leaving a lasting legacy in both scientific research and environmental conservation.</p>
-      </div>
+      /* HEADER NAVBAR */
+      .navbar { display: flex; align-items: center; justify-content: space-between; padding: 20px; max-width: 1200px; margin: auto; }
+      .navbar .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #222; font-weight: 700; font-family: 'Outfit', sans-serif; }
+      .logo-img { width: 40px; height: 40px; }
+      .nav-links { display: flex; gap: 20px; }
+      .nav-links a { text-decoration: none; color: #333; font-weight: 600; }
+      .nav-cta { background: #1a73e8; color: #fff; padding: 8px 16px; border-radius: 5px; text-decoration: none; font-weight: 600; }
 
-      <div class="card">
-        <h2>Rosalind Franklin</h2>
-        <p><strong>1920 – 1958</strong></p>
-        <p>Rosalind Franklin was an English chemist and X-ray crystallographer whose work was critical in discovering the double-helix structure of DNA. Her X-ray diffraction images provided the essential evidence used by Watson and Crick, revolutionizing molecular biology and genetics.</p>
-      </div>
+      /* ARTICLE PAGE */
+      .article-container { max-width: 800px; margin: 50px auto; padding: 0 20px; }
+      .article-header .article-category { text-transform: uppercase; color: #888; font-size: 0.9em; letter-spacing: 1px; margin-bottom: 8px; }
+      .article-title { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 2.5em; margin-bottom: 15px; color: #1a73e8; }
+      .article-subtitle { font-size: 1.2em; color: #555; margin-bottom: 10px; }
+      .article-meta { font-size: 0.9em; color: #888; margin-bottom: 30px; }
 
-      <div class="card">
-        <h2>Vera Rubin</h2>
-        <p><strong>1928 – 2016</strong></p>
-        <p>Vera Rubin was an American astronomer whose pioneering observations of galaxy rotation rates provided strong evidence for the existence of dark matter. Her research transformed our understanding of the universe and helped shape modern cosmology. Rubin was a strong advocate for women in science.</p>
-      </div>
+      .article-image img { width: 100%; border-radius: 12px; margin-bottom: 10px; }
+      .article-image figcaption { font-size: 0.85em; color: #888; margin-bottom: 30px; }
 
-      <div class="card">
-        <h2>Chien-Shiung Wu</h2>
-        <p><strong>1912 – 1997</strong></p>
-        <p>Chien-Shiung Wu, known as the "First Lady of Physics," was a Chinese-American experimental physicist who conducted groundbreaking experiments in nuclear physics. Her work on beta decay confirmed important theoretical predictions, challenging previously accepted laws of physics and paving the way for future discoveries.</p>
+      .article-body p { font-size: 1.05em; margin-bottom: 20px; }
+      .article-body blockquote {
+        border-left: 4px solid #1a73e8;
+        padding-left: 15px;
+        margin: 30px 0;
+        font-style: italic;
+        background: #f5f7fa;
+        border-radius: 5px;
+        color: #555;
+      }
+      pre { background: #f5f7fa; padding: 15px; border-radius: 8px; overflow-x: auto; margin-bottom: 20px; }
+      code { font-family: 'Courier New', monospace; color: #1a73e8; }
+
+      .related-articles h2 { font-size: 1.5em; margin-top: 50px; margin-bottom: 15px; color: #222; }
+      .related-articles ul { list-style-type: none; padding-left: 0; }
+      .related-articles li { margin-bottom: 10px; }
+      .related-articles a { text-decoration: none; color: #1a73e8; font-weight: 600; transition: color 0.3s ease; }
+      .related-articles a:hover { color: #155ab6; }
+
+      /* FOOTER */
+      .footer { background: #f5f5f5; padding: 40px 20px; }
+      .footer-grid { display: flex; flex-wrap: wrap; gap: 30px; max-width: 1200px; margin: auto; }
+      .footer-grid div { flex: 1; min-width: 200px; }
+      .footer h4 { margin-bottom: 12px; font-weight: 600; }
+      .footer a { color: #1a73e8; text-decoration: none; }
+      .footer a:hover { text-decoration: underline; }
+
+      @media (max-width: 600px) {
+        .article-title { font-size: 2em; }
+        .article-subtitle { font-size: 1em; }
+        .navbar { flex-direction: column; align-items: flex-start; gap: 15px; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          <img class="logo-img" src="assets/logo.png" alt="Code For ME logo" />
+          <span>Code For ME</span>
+        </a>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="meet-the-team.html">Meet The Team</a>
+          <a href="photo-gallery.html">Photo Gallery</a>
+          <a href="resources.html">Resources</a>
+          <a href="#codecourse">CodeCourse</a>
+        </nav>
+        <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join Our List</a>
       </div>
-    </div>
-  </div>
-</body>
+    </header>
+
+    <!-- MAIN ARTICLE -->
+    <main class="article-page">
+      <div class="container article-container">
+        <header class="article-header">
+          <p class="article-category">STEM & Coding</p>
+          <h1 class="article-title">[Insert Your Article Title Here]</h1>
+          <p class="article-subtitle">[Optional subtitle]</p>
+          <p class="article-meta">By <strong>[Author Name]</strong> | <time datetime="[YYYY-MM-DD]">[Month DD, YYYY]</time></p>
+        </header>
+
+        <figure class="article-image">
+          <img src="[Insert image URL]" alt="[Alt text]" />
+          <figcaption>[Optional caption]</figcaption>
+        </figure>
+
+        <section class="article-body">
+          <p>[First paragraph of your article]</p>
+          <p>[Second paragraph… continue writing]</p>
+          <blockquote>"[Optional inspirational quote]"</blockquote>
+          <pre><code>// Example code snippet
+print("Hello, Code For ME!")</code></pre>
+        </section>
+
+        <section class="related-articles">
+          <h2>Related Articles</h2>
+          <ul>
+            <li><a href="articles/history-of-python.html">History of Python</a></li>
+            <li><a href="articles/women-in-stem.html">Women in STEM</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 12px;">
+            <img class="logo-img" src="assets/logo.png" alt="Code For ME logo" />
+            <span>Code For ME</span>
+          </div>
+          <p>Free Python Coding Camp For Students. For Local. From Local.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p><a href="resources/what-is-python.html">What Is Python?</a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
