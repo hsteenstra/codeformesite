@@ -877,8 +877,6 @@ margin-bottom:20px;
     white-space: nowrap;
   }
 
-  .nav-cta::before { content: ""; font-weight: 700; margin-right: 6px; }
-}
 
 .hero-break {
   display: inline-block;
