@@ -1397,3 +1397,92 @@ margin-top:40px;
 font-size:28px;
 }
 
+
+.camp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+/* Card styling */
+.camp-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.camp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Wave header */
+.wave {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+
+/* Price badge */
+.price-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #ffd166;
+  color: #1a2f4a;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Card text */
+.camp-card h2 {
+  font-family: "Outfit", sans-serif;
+  color: #1a2f4a;
+  margin: 16px 20px 10px;
+  font-size: 20px;
+}
+
+.camp-card p {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #444;
+  margin: 6px 20px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* Button */
+.signup-button {
+  display: inline-block;
+  margin: 20px;
+  padding: 10px 16px;
+  background: #ffd166;
+  color: #1a2f4a;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.signup-button:hover {
+  background: #f4a261;
+}
+
+/* Bottom note */
+.note {
+  margin-top: 24px;
+  font-size: 14px;
+  color: #333;
+}
+
+.note a {
+  color: #1a2f4a;
+  font-weight: 600;
+}
+
