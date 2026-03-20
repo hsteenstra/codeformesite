@@ -303,6 +303,117 @@ margin-bottom:20px;
   color: rgba(12, 28, 60, 0.5);
   margin-bottom: 10px;
 }
+/* SECTION HEADER */
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-title {
+  font-family: "Outfit", sans-serif;
+  font-size: 34px;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  max-width: 600px;
+  font-size: 15px;
+}
+
+/* GRID (3 in a row on desktop) */
+.camp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.camp-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.camp-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* TOP COLOR STRIP */
+.wave {
+  height: 6px;
+  width: 100%;
+}
+
+.python { background: linear-gradient(90deg, #ff7a7a, #d47571); }
+.html { background: linear-gradient(90deg, #ffd166, #efad00); }
+.advanced { background: linear-gradient(90deg, #7ad1d6, #68b6ba); }
+
+/* CONTENT */
+.card-body {
+  padding: 18px;
+}
+
+/* TOP ROW */
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.camp-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* PRICE */
+.price {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+}
+
+/* META */
+.meta {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* DESCRIPTION */
+.desc {
+  font-size: 13px;
+  margin-top: 10px;
+  line-height: 1.5;
+  color: #374151;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #333;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .camp-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .split {
   display: grid;
