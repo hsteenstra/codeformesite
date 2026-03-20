@@ -877,7 +877,7 @@ margin-bottom:20px;
     white-space: nowrap;
   }
 
-  .nav-cta::before { content: "Join Us"; font-weight: 700; margin-right: 6px; }
+  .nav-cta::before { content: ""; font-weight: 700; margin-right: 6px; }
 }
 
 .hero-break {
