@@ -1486,3 +1486,23 @@ font-size:28px;
   font-weight: 600;
 }
 
+.camp-card h2 {
+  font-size: 22px; /* was 20px */
+}
+
+.camp-card p {
+  font-size: 16px; /* was 14px */
+}
+
+.price-badge {
+  font-size: 16px; /* was 14px */
+}
+
+.signup-button {
+  font-size: 16px; /* slightly larger for consistency */
+}
+
+.note {
+  font-size: 16px;
+}
+
