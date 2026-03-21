@@ -1713,3 +1713,20 @@ body {
   border-radius: 999px !important;
   font-weight: bold !important;
 }
+
+
+  /* ===== DESKTOP FIX ===== */
+
+@media (min-width: 900px) {
+  .camp-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    max-width: 1100px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .camp-card {
+    max-width: 350px !important;
+    margin: 0 auto !important;
+  }
+}
