@@ -1559,3 +1559,88 @@ font-size:28px;
   border-radius: 8px !important;
   text-decoration: none !important;
 }
+
+
+
+  /* ===== HARD OVERRIDE FOR CAMP CARDS ===== */
+
+.camp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 30px !important;
+}
+
+@media (max-width: 900px) {
+  .camp-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.camp-card {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  padding-bottom: 10px !important;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important;
+  position: relative !important;
+}
+
+/* FIX WAVE */
+.camp-card .wave {
+  width: 100% !important;
+  height: 90px !important;
+  display: block !important;
+}
+
+/* TEXT FIX */
+.camp-card h2 {
+  font-family: "Outfit", sans-serif !important;
+  font-size: 22px !important;
+  margin: 16px 20px 10px !important;
+  color: #1a2f4a !important;
+}
+
+.camp-card p {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 15px !important;
+  margin: 6px 20px !important;
+  color: #444 !important;
+  line-height: 1.5 !important;
+}
+
+/* PRICE BADGE FIX */
+.price-badge {
+  position: absolute !important;
+  top: 14px !important;
+  right: 14px !important;
+  z-index: 10 !important;
+  background: #ffd166 !important;
+  color: #1a2f4a !important;
+  font-weight: 700 !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+}
+
+/* BUTTON FIX */
+.signup-button {
+  display: block !important;
+  width: calc(100% - 40px) !important;
+  margin: 20px !important;
+  padding: 12px !important;
+  text-align: center !important;
+  background: #ffd166 !important;
+  color: #1a2f4a !important;
+  font-weight: 700 !important;
+  border-radius: 10px !important;
+  text-decoration: none !important;
+}
+
+/* REMOVE RANDOM BODY OVERRIDES */
+body {
+  padding: 0 !important;
+  background: #fff !important;
+}
