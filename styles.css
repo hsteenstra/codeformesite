@@ -1644,3 +1644,72 @@ body {
   padding: 0 !important;
   background: #fff !important;
 }
+
+  /* ===== NUCLEAR FIX ===== */
+
+/* Force grid no matter what */
+.camp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+  gap: 30px !important;
+}
+
+/* Kill any weird inherited flex/grid behavior */
+.camp-card {
+  all: unset !important;
+  display: block !important;
+  background: white !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+  position: relative !important;
+}
+
+/* Keep wave normal */
+.wave {
+  width: 100% !important;
+  height: 90px !important;
+  display: block !important;
+}
+
+/* Content wrapper (this is key) */
+.camp-content {
+  padding: 20px !important;
+}
+
+/* Text */
+.camp-content h2 {
+  font-size: 22px !important;
+  margin-bottom: 10px !important;
+  color: #1a2f4a !important;
+}
+
+.camp-content p {
+  font-size: 15px !important;
+  margin: 6px 0 !important;
+  color: #444 !important;
+}
+
+/* Button */
+.signup-button {
+  display: block !important;
+  margin-top: 15px !important;
+  padding: 12px !important;
+  background: #ffd166 !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  font-weight: bold !important;
+  text-decoration: none !important;
+  color: #1a2f4a !important;
+}
+
+/* Badge */
+.price-badge {
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
+  background: #ffd166 !important;
+  padding: 8px 14px !important;
+  border-radius: 999px !important;
+  font-weight: bold !important;
+}
