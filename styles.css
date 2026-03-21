@@ -1505,84 +1505,57 @@ font-size:28px;
 }
 
 
-  <!-- CSS -->
-<style>
-body {
-  font-family: Arial, sans-serif;
-  background: #eaf4fc;
-  padding: 20px;
-}
+ /* FORCE CLEAN CAMP CARD DESIGN */
 
 .camp-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 24px !important;
+  margin-top: 20px !important;
 }
 
 .camp-card {
-  background: #fff;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
+  background: #ffffff !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  position: relative !important;
 }
 
-.camp-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* Wave styling */
-.wave {
-  display: block;
-  width: 100%;
-  height: 100px;
-}
-
-/* Price badge */
-.price-badge {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background-color: #ffd166;
-  color: #1a2f4a;
-  font-weight: bold;
-  padding: 12px 18px;
-  border-radius: 50px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  font-size: 16px;
-}
-
-/* Card content */
 .camp-card h2 {
-  color: #1a2f4a;
-  margin: 20px;
-  margin-top: 10px;
+  font-family: "Outfit", sans-serif !important;
+  font-size: 22px !important;
+  margin: 16px 20px 10px !important;
+  color: #1a2f4a !important;
 }
 
 .camp-card p {
-  color: #333;
-  margin: 5px 20px;
-  line-height: 1.5;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 16px !important;
+  margin: 6px 20px !important;
+  color: #444 !important;
+  line-height: 1.5 !important;
 }
 
-/* Sign Up button as cute link */
+.price-badge {
+  position: absolute !important;
+  top: 16px !important;
+  right: 16px !important;
+  background: #ffd166 !important;
+  color: #1a2f4a !important;
+  font-weight: 700 !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+}
+
 .signup-button {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px 15px;
-  background-color: #ffd166;
-  color: #1a2f4a;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
+  display: inline-block !important;
+  margin: 20px !important;
+  padding: 10px 16px !important;
+  background: #ffd166 !important;
+  color: #1a2f4a !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
 }
-
-.signup-button:hover {
-  background-color: #f4a261;
-}
-
