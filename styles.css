@@ -23,8 +23,8 @@ body {
   font-family: "Plus Jakarta Sans", "Segoe UI", sans-serif;
   color: var(--ink);
   background:
-    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.2), transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.18), transparent 45%),
+    radial-gradient(circle at 15% 0%, rgba(63,123,246,0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(247,181,0,0.18), transparent 45%),
     linear-gradient(180deg, #e6efff 0%, #f3f7ff 55%, #e9f1ff 100%);
   line-height: 1.7;
 }
@@ -105,12 +105,10 @@ header {
   display: grid;
   align-items: center;
   padding: 84px 0 60px;
-  position: relative;
 }
 
 .hero-content {
   color: #fff;
-  z-index: 1;
   display: grid;
   gap: 18px;
 }
@@ -160,49 +158,89 @@ header {
   margin-bottom: 24px;
 }
 
-/* CAMP GRID */
+/* CAMP GRID (UPDATED DESIGN) */
 
 .camp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
 .camp-card {
   background: #fff;
-  border-radius: 20px;
+  border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: 0.25s;
+  transition: 0.3s;
   position: relative;
 }
 
 .camp-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
+/* SVG wave */
+
 .wave {
+  display: block;
   width: 100%;
-  height: 80px;
+  height: 100px;
 }
+
+/* price badge */
 
 .price-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
   background: #ffd166;
-  padding: 10px 14px;
-  border-radius: 999px;
+  color: #1a2f4a;
   font-weight: 700;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
 }
+
+/* card text */
+
+.camp-card h2 {
+  margin: 20px;
+  margin-top: 10px;
+  font-size: 20px;
+  color: #1a2f4a;
+}
+
+.camp-card p {
+  margin: 6px 20px;
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* button */
 
 .signup-button {
   display: inline-block;
   margin: 20px;
   padding: 10px 16px;
   background: #ffd166;
-  border-radius: 8px;
+  color: #1a2f4a;
   font-weight: 700;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.signup-button:hover {
+  background: #f4a261;
+}
+
+/* note under cards */
+
+.note {
+  margin-top: 24px;
+  font-size: 14px;
+  text-align: center;
 }
 
 /* ARTICLE */
@@ -218,41 +256,14 @@ header {
   font-size: 28px;
 }
 
-/* GRID + CARDS */
-
-.card-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.card {
-  background: rgba(255,255,255,0.8);
-  border-radius: var(--radius-md);
-  padding: 18px;
-}
-
-/* MEDIA */
-
-.photo-card img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
-}
-
-.video-frame {
-  height: 220px;
-  display: grid;
-  place-items: center;
-}
-
-/* TESTIMONIALS (cleaned version) */
+/* TESTIMONIAL (CLEAN BOX STYLE) */
 
 .testimonial-card {
-  background: #fff;
+  background: #ffffff;
   padding: 30px 25px;
   border-radius: 12px;
   max-width: 760px;
-  margin: auto;
+  margin: 20px auto;
   box-shadow: 0 6px 12px rgba(0,0,0,0.08);
 }
 
@@ -266,33 +277,34 @@ header {
   font-weight: 500;
 }
 
-/* QUOTE BOX */
+/* QUOTE BOX (VISIBLE BOX AROUND TEXT) */
 
 .quote-box {
-  background: #fff;
+  background: #ffffff;
+  color: #0f172a;
   padding: 20px 25px;
   border-radius: 12px;
   max-width: 700px;
   margin: 20px auto;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
   font-style: italic;
   position: relative;
 }
 
 .quote-box::before {
   content: "“";
+  font-size: 2rem;
   position: absolute;
   top: 5px;
   left: 10px;
-  font-size: 2rem;
 }
 
 .quote-box::after {
   content: "”";
+  font-size: 2rem;
   position: absolute;
   bottom: 5px;
   right: 10px;
-  font-size: 2rem;
 }
 
 /* MODAL */
