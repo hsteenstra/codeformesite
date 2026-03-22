@@ -1605,3 +1605,13 @@ font-size:28px;
     grid-template-columns: 1fr;
   }
 }
+
+  .camp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px;
+}
+
+  .camp-card {
+  width: auto !important;
+}
