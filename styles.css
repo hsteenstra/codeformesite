@@ -326,7 +326,7 @@ margin-bottom:20px;
 /* TOP COLOR STRIP */
 .wave {
   height: 6px;
-  width: 100%;
+  width: 33.33%;
 }
 
 .python { background: linear-gradient(90deg, #ff7a7a, #d47571); }
@@ -432,7 +432,6 @@ margin-bottom:20px;
 .card p { margin: 8px 0 0; color: var(--ink-soft); }
 
 .poster-card { padding: 12px; display: grid; gap: 10px; }
-.poster-card img { width: 100%; border-radius: 14px; box-shadow: var(--shadow); }
 
 .callout {
   background: linear-gradient(135deg, rgba(29, 95, 211, 0.12), rgba(35, 201, 184, 0.18));
