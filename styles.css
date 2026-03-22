@@ -1401,7 +1401,7 @@ font-size:28px;
 /* Wave header */
 .wave {
   display: block;
-  width: 100%;
+  width: 33.33%;
   height: 80px;
 }
 
@@ -1526,7 +1526,7 @@ font-size:28px;
 
 /* Top wave */
 .wave {
-  width: 100%;
+  width: 33.33%;
   height: 80px;
 }
 
