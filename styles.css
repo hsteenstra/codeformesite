@@ -321,26 +321,7 @@ margin-bottom:20px;
   font-size: 15px;
 }
 
-/* GRID (3 in a row on desktop) */
-.camp-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
 
-/* CARD */
-.camp-card {
-  background: #fff;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.06);
-  overflow: hidden;
-  transition: 0.25s ease;
-}
-
-.camp-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
 
 /* TOP COLOR STRIP */
 .wave {
@@ -1550,27 +1531,8 @@ font-size:28px;
   height: 80px;
 }
 
-/* Content */
-.camp-content {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
 
-/* Title */
-.camp-content h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #1a2f4a;
-}
 
-/* Text */
-.camp-content p {
-  font-size: 15px;
-  margin: 6px 0;
-  color: #444;
-}
 
 /* Push button to bottom */
 .camp-content .signup-button {
@@ -1590,16 +1552,7 @@ font-size:28px;
   text-decoration: none;
 }
 
-/* Price badge */
-.price-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: #ffd166;
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-weight: bold;
-}
+
 
 
 /* ===== FINAL CAMP FIX (OVERRIDE EVERYTHING) ===== */
@@ -1641,9 +1594,3 @@ font-size:28px;
   height: 100% !important;
 }
 
-/* fix button alignment */
-.section .signup-button {
-  margin-top: auto !important;
-  display: block !important;
-  text-align: center !important;
-}
