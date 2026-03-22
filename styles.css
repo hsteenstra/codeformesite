@@ -1600,3 +1600,50 @@ font-size:28px;
   border-radius: 999px;
   font-weight: bold;
 }
+
+
+/* ===== FINAL CAMP FIX (OVERRIDE EVERYTHING) ===== */
+
+.section .camp-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 30px !important;
+}
+
+/* tablet */
+@media (max-width: 1000px) {
+  .section .camp-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* mobile */
+@media (max-width: 700px) {
+  .section .camp-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.section .camp-card {
+  display: flex !important;
+  flex-direction: column !important;
+  background: white !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+}
+
+/* fix content spacing */
+.section .camp-content {
+  padding: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+}
+
+/* fix button alignment */
+.section .signup-button {
+  margin-top: auto !important;
+  display: block !important;
+  text-align: center !important;
+}
