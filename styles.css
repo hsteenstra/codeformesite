@@ -1618,10 +1618,11 @@ font-size:28px;
 
 .buy-button {
   display: inline-block;
-  background-color: #1b5fd6; /* match your theme */
+  background-color: #1b5fd6;
   color: #ffffff;
   padding: 12px 20px;
-  border-radius: 8px;
+  border-radius: 999px; /* THIS makes it pill-shaped (circle ends) */
+  border: 2px solid #1b5fd6; /* THIS is the missing “circle/outline” */
   text-decoration: none;
   font-weight: 600;
   margin-top: 10px;
@@ -1629,6 +1630,7 @@ font-size:28px;
 }
 
 .buy-button:hover {
-  background-color: #0b1f4b;
-  transform: translateY(-1px);
+  background-color: #ffffff;
+  color: #1b5fd6;
+  border: 2px solid #1b5fd6;
 }
