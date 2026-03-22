@@ -1505,228 +1505,98 @@ font-size:28px;
 }
 
 
- /* FORCE CLEAN CAMP CARD DESIGN */
+/* ===== CLEAN CAMP SECTION (FINAL) ===== */
 
 .camp-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
-  gap: 24px !important;
-  margin-top: 20px !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 30px;
 }
 
-.camp-card {
-  background: #ffffff !important;
-  border-radius: 20px !important;
-  overflow: hidden !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
-  position: relative !important;
-}
-
-.camp-card h2 {
-  font-family: "Outfit", sans-serif !important;
-  font-size: 22px !important;
-  margin: 16px 20px 10px !important;
-  color: #1a2f4a !important;
-}
-
-.camp-card p {
-  font-family: "Plus Jakarta Sans", sans-serif !important;
-  font-size: 16px !important;
-  margin: 6px 20px !important;
-  color: #444 !important;
-  line-height: 1.5 !important;
-}
-
-.price-badge {
-  position: absolute !important;
-  top: 16px !important;
-  right: 16px !important;
-  background: #ffd166 !important;
-  color: #1a2f4a !important;
-  font-weight: 700 !important;
-  padding: 10px 14px !important;
-  border-radius: 999px !important;
-}
-
-.signup-button {
-  display: inline-block !important;
-  margin: 20px !important;
-  padding: 10px 16px !important;
-  background: #ffd166 !important;
-  color: #1a2f4a !important;
-  font-weight: 700 !important;
-  border-radius: 8px !important;
-  text-decoration: none !important;
-}
-
-
-
-  /* ===== HARD OVERRIDE FOR CAMP CARDS ===== */
-
-.camp-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 24px !important;
-  margin-top: 30px !important;
-}
-
-@media (max-width: 900px) {
+/* Tablet */
+@media (max-width: 1000px) {
   .camp-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .camp-grid {
+    grid-template-columns: 1fr;
   }
 }
 
 .camp-card {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-start !important;
-  background: #ffffff !important;
-  border-radius: 20px !important;
-  overflow: hidden !important;
-  padding-bottom: 10px !important;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08) !important;
-  position: relative !important;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: 0.25s ease;
 }
 
-/* FIX WAVE */
-.camp-card .wave {
-  width: 100% !important;
-  height: 90px !important;
-  display: block !important;
+.camp-card:hover {
+  transform: translateY(-6px);
 }
 
-/* TEXT FIX */
-.camp-card h2 {
-  font-family: "Outfit", sans-serif !important;
-  font-size: 22px !important;
-  margin: 16px 20px 10px !important;
-  color: #1a2f4a !important;
-}
-
-.camp-card p {
-  font-family: "Plus Jakarta Sans", sans-serif !important;
-  font-size: 15px !important;
-  margin: 6px 20px !important;
-  color: #444 !important;
-  line-height: 1.5 !important;
-}
-
-/* PRICE BADGE FIX */
-.price-badge {
-  position: absolute !important;
-  top: 14px !important;
-  right: 14px !important;
-  z-index: 10 !important;
-  background: #ffd166 !important;
-  color: #1a2f4a !important;
-  font-weight: 700 !important;
-  padding: 8px 14px !important;
-  border-radius: 999px !important;
-}
-
-/* BUTTON FIX */
-.signup-button {
-  display: block !important;
-  width: calc(100% - 40px) !important;
-  margin: 20px !important;
-  padding: 12px !important;
-  text-align: center !important;
-  background: #ffd166 !important;
-  color: #1a2f4a !important;
-  font-weight: 700 !important;
-  border-radius: 10px !important;
-  text-decoration: none !important;
-}
-
-/* REMOVE RANDOM BODY OVERRIDES */
-body {
-  padding: 0 !important;
-  background: #fff !important;
-}
-
-  /* ===== NUCLEAR FIX ===== */
-
-/* Force grid no matter what */
-.camp-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-  gap: 30px !important;
-}
-
-/* Kill any weird inherited flex/grid behavior */
-.camp-card {
-  all: unset !important;
-  display: block !important;
-  background: white !important;
-  border-radius: 20px !important;
-  overflow: hidden !important;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
-  position: relative !important;
-}
-
-/* Keep wave normal */
+/* Top wave */
 .wave {
-  width: 100% !important;
-  height: 90px !important;
-  display: block !important;
+  width: 100%;
+  height: 80px;
 }
 
-/* Content wrapper (this is key) */
+/* Content */
 .camp-content {
-  padding: 20px !important;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Title */
+.camp-content h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #1a2f4a;
 }
 
 /* Text */
-.camp-content h2 {
-  font-size: 22px !important;
-  margin-bottom: 10px !important;
-  color: #1a2f4a !important;
+.camp-content p {
+  font-size: 15px;
+  margin: 6px 0;
+  color: #444;
 }
 
-.camp-content p {
-  font-size: 15px !important;
-  margin: 6px 0 !important;
-  color: #444 !important;
+/* Push button to bottom */
+.camp-content .signup-button {
+  margin-top: auto;
 }
 
 /* Button */
 .signup-button {
-  display: block !important;
-  margin-top: 15px !important;
-  padding: 12px !important;
-  background: #ffd166 !important;
-  text-align: center !important;
-  border-radius: 10px !important;
-  font-weight: bold !important;
-  text-decoration: none !important;
-  color: #1a2f4a !important;
+  display: block;
+  margin-top: 16px;
+  padding: 12px;
+  text-align: center;
+  background: #ffd166;
+  color: #1a2f4a;
+  font-weight: 700;
+  border-radius: 10px;
+  text-decoration: none;
 }
 
-/* Badge */
+/* Price badge */
 .price-badge {
-  position: absolute !important;
-  top: 15px !important;
-  right: 15px !important;
-  background: #ffd166 !important;
-  padding: 8px 14px !important;
-  border-radius: 999px !important;
-  font-weight: bold !important;
-}
-
-
-  /* ===== DESKTOP FIX ===== */
-
-@media (min-width: 900px) {
-  .camp-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-    max-width: 1100px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-
-  .camp-card {
-    max-width: 350px !important;
-    margin: 0 auto !important;
-  }
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffd166;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: bold;
 }
