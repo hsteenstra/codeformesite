@@ -1614,3 +1614,21 @@ font-size:28px;
   .camp-card {
   width: auto !important;
 }
+
+
+.buy-button {
+  display: inline-block;
+  background-color: #1b5fd6; /* match your theme */
+  color: #ffffff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: 0.2s ease;
+}
+
+.buy-button:hover {
+  background-color: #0b1f4b;
+  transform: translateY(-1px);
+}
