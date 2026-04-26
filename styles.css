@@ -1480,3 +1480,46 @@ font-size:28px;
   color: #1b5fd6;
   border: 2px solid #1b5fd6;
 }
+
+  <style>
+      .textbook-release {
+        text-align: center;
+        padding: 60px 0;
+        background: #fff7fb;
+      }
+
+      .textbook-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+        margin-top: 25px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .textbook-grid img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        transition: transform 0.25s ease;
+      }
+
+      .textbook-grid img:hover {
+        transform: scale(1.03);
+      }
+
+      .photo-credit {
+        margin-top: 20px;
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .photo-credit a {
+        color: #ff4fa3;
+        text-decoration: none;
+        font-weight: 600;
+      }
+    </style>
