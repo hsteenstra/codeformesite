@@ -1,209 +1,171 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Code For ME • Across Maine</title>
+<title>Code For ME Map</title>
 
 <style>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-
 body{
-  background:linear-gradient(to bottom right,#68b6ba,#7497af);
-  color:white;
-  padding:40px 20px;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f4f7fb;
+  padding:50px;
 }
 
-.title{
-  text-align:center;
-  margin-bottom:40px;
+/* SECTION */
+
+.map-section{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:50px;
+  flex-wrap:wrap;
 }
 
-.title h1{
+/* LEFT SIDE TEXT */
+
+.info{
+  max-width:350px;
+}
+
+.info h1{
   font-size:3rem;
-  margin-bottom:10px;
+  color:#1f3c58;
+  margin-bottom:15px;
 }
 
-.title p{
-  max-width:700px;
-  margin:auto;
+.info p{
+  color:#4b5d6b;
   line-height:1.6;
-  opacity:.9;
-}
-
-.map-wrapper{
-  max-width:850px;
-  margin:auto;
-  position:relative;
-}
-
-.map{
-  width:100%;
-  border-radius:25px;
-  display:block;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-}
-
-/* PINS */
-
-.pin{
-  position:absolute;
-  width:28px;
-  height:28px;
-  background:#efab03;
-  border-radius:50% 50% 50% 0;
-  transform:rotate(-45deg);
-  border:3px solid white;
-  cursor:pointer;
-  transition:.25s;
-}
-
-.pin:hover{
-  transform:rotate(-45deg) scale(1.15);
-  background:#d47571;
-}
-
-.pin::after{
-  content:'';
-  width:10px;
-  height:10px;
-  background:white;
-  border-radius:50%;
-  position:absolute;
-  top:6px;
-  left:6px;
-}
-
-.tooltip{
-  position:absolute;
-  top:-45px;
-  left:-20px;
-  background:white;
-  color:#333;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:.9rem;
-  white-space:nowrap;
-  display:none;
-}
-
-.pin:hover .tooltip{
-  display:block;
-}
-
-/* EXISTING LOCATIONS */
-
-/* Bath */
-.bath{
-  top:63%;
-  left:72%;
-}
-
-/* Woolwich */
-.woolwich{
-  top:60%;
-  left:73%;
-}
-
-/* Messalonskee */
-.messalonskee{
-  top:40%;
-  left:58%;
-}
-
-/* Sacopee Valley */
-.sacopee{
-  top:57%;
-  left:42%;
-}
-
-/* Rockland */
-.rockland{
-  top:58%;
-  left:66%;
-}
-
-/* USER PIN */
-
-#userPin{
-  position:absolute;
-  width:30px;
-  height:30px;
-  background:#ff4d6d;
-  border-radius:50% 50% 50% 0;
-  transform:rotate(-45deg);
-  border:3px solid white;
-  cursor:grab;
-  display:none;
-  z-index:100;
-}
-
-#userPin::after{
-  content:'';
-  width:10px;
-  height:10px;
-  background:white;
-  border-radius:50%;
-  position:absolute;
-  top:7px;
-  left:7px;
+  margin-bottom:25px;
 }
 
 /* FORM */
 
-.form-box{
-  margin-top:30px;
-  background:rgba(255,255,255,.12);
-  padding:25px;
-  border-radius:20px;
-  backdrop-filter:blur(10px);
-}
-
-.form-box h2{
-  margin-bottom:15px;
-}
-
-.form-box p{
-  margin-bottom:20px;
-  opacity:.9;
-}
-
 input{
   width:100%;
   padding:14px;
-  border:none;
   border-radius:12px;
+  border:none;
+  background:white;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
   margin-bottom:15px;
   font-size:1rem;
 }
 
 button{
-  background:#efab03;
-  border:none;
-  padding:14px 22px;
-  border-radius:12px;
+  background:#68b6ba;
   color:white;
-  font-size:1rem;
+  border:none;
+  padding:14px 20px;
+  border-radius:12px;
   cursor:pointer;
-  transition:.25s;
+  font-size:1rem;
+  transition:.2s;
 }
 
 button:hover{
-  background:#d47571;
+  background:#4ea2a7;
 }
 
-.coords{
-  margin-top:15px;
-  font-size:.95rem;
-  opacity:.85;
+/* MAP */
+
+.map-container{
+  position:relative;
+  width:380px;
+}
+
+.map{
+  width:100%;
+  user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none;
+}
+
+/* LOCATION PINS */
+
+.pin,
+.user-pin{
+  width:22px;
+  height:22px;
+  position:absolute;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  border:2px solid white;
+}
+
+.pin{
+  background:#efab03;
+}
+
+.user-pin{
+  background:#d47571;
+  cursor:grab;
+  z-index:100;
+  display:none;
+}
+
+.pin::after,
+.user-pin::after{
+  content:'';
+  width:8px;
+  height:8px;
+  background:white;
+  border-radius:50%;
+  position:absolute;
+  top:5px;
+  left:5px;
+}
+
+/* TOOLTIP */
+
+.tooltip{
+  position:absolute;
+  top:-35px;
+  left:-15px;
+  background:#1f3c58;
+  color:white;
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:.8rem;
+  white-space:nowrap;
+  opacity:0;
+  transition:.2s;
+  pointer-events:none;
+}
+
+.pin:hover .tooltip{
+  opacity:1;
+}
+
+/* EXISTING LOCATIONS */
+
+.bath{
+  top:240px;
+  left:265px;
+}
+
+.woolwich{
+  top:225px;
+  left:270px;
+}
+
+.mess{
+  top:150px;
+  left:210px;
+}
+
+.sacopee{
+  top:220px;
+  left:140px;
+}
+
+.rockland{
+  top:210px;
+  left:245px;
 }
 
 </style>
@@ -211,117 +173,99 @@ button:hover{
 
 <body>
 
-<div class="title">
-  <h1>Code For ME Across Maine</h1>
+<section class="map-section">
 
-  <p>
-    We've worked with students across Maine teaching coding,
-    creativity, and technology. Drag your own pin onto the map
-    and show us where you're from!
-  </p>
-</div>
+  <!-- LEFT SIDE -->
+  <div class="info">
 
-<div class="map-wrapper" id="mapWrapper">
+    <h1>Across Maine</h1>
 
-  <!-- MAP IMAGE -->
-  <img src="maine-map.png" class="map" alt="Map of Maine">
+    <p>
+      Code For ME has taught students all across Maine.
+      Add your school or town and drag your pin onto the map!
+    </p>
 
-  <!-- EXISTING PINS -->
+    <input type="text" placeholder="Your school or town">
 
-  <div class="pin bath">
-    <div class="tooltip">Bath</div>
+    <button onclick="showPin()">
+      Add My Pin
+    </button>
+
   </div>
 
-  <div class="pin woolwich">
-    <div class="tooltip">Woolwich</div>
+  <!-- RIGHT SIDE -->
+  <div class="map-container" id="mapContainer">
+
+    <!-- MAP IMAGE -->
+    <img src="maine-map.png" class="map">
+
+    <!-- EXISTING PINS -->
+
+    <div class="pin bath">
+      <div class="tooltip">Bath</div>
+    </div>
+
+    <div class="pin woolwich">
+      <div class="tooltip">Woolwich</div>
+    </div>
+
+    <div class="pin mess">
+      <div class="tooltip">Messalonskee</div>
+    </div>
+
+    <div class="pin socopee">
+      <div class="tooltip">Sacopee Valley</div>
+    </div>
+
+    <div class="pin rockland">
+      <div class="tooltip">Rockland</div>
+    </div>
+
+    <!-- USER PIN -->
+    <div class="user-pin" id="userPin"></div>
+
   </div>
 
-  <div class="pin messalonskee">
-    <div class="tooltip">Messalonskee</div>
-  </div>
-
-  <div class="pin socopee">
-    <div class="tooltip">Sacopee Valley</div>
-  </div>
-
-  <div class="pin rockland">
-    <div class="tooltip">Rockland</div>
-  </div>
-
-  <!-- USER DRAGGABLE PIN -->
-  <div id="userPin"></div>
-
-</div>
-
-<!-- FORM -->
-<div class="form-box">
-
-  <h2>Add Your School</h2>
-
-  <p>
-    Type your school or town, then drag the pink pin onto the map
-    to show where you're from.
-  </p>
-
-  <input type="text" id="schoolInput" placeholder="Your school or town">
-
-  <button onclick="showPin()">
-    Add My Pin
-  </button>
-
-  <div class="coords" id="coordsText">
-    Drag the pin anywhere on the map.
-  </div>
-
-</div>
+</section>
 
 <script>
 
 const pin = document.getElementById("userPin");
-const mapWrapper = document.getElementById("mapWrapper");
-const coordsText = document.getElementById("coordsText");
+const map = document.getElementById("mapContainer");
 
-let isDragging = false;
+let dragging = false;
 
 function showPin(){
 
   pin.style.display = "block";
 
-  pin.style.left = "50%";
-  pin.style.top = "50%";
+  pin.style.left = "180px";
+  pin.style.top = "180px";
 
 }
 
 pin.addEventListener("mousedown", () => {
-  isDragging = true;
-  pin.style.cursor = "grabbing";
+  dragging = true;
 });
 
 document.addEventListener("mouseup", () => {
-  isDragging = false;
-  pin.style.cursor = "grab";
+  dragging = false;
 });
 
 document.addEventListener("mousemove", (e) => {
 
-  if(!isDragging) return;
+  if(!dragging) return;
 
-  const rect = mapWrapper.getBoundingClientRect();
+  const rect = map.getBoundingClientRect();
 
   let x = e.clientX - rect.left;
   let y = e.clientY - rect.top;
 
-  x = Math.max(0, Math.min(x, rect.width));
-  y = Math.max(0, Math.min(y, rect.height));
+  x = Math.max(0, Math.min(x, rect.width - 20));
+  y = Math.max(0, Math.min(y, rect.height - 20));
 
   pin.style.left = x + "px";
   pin.style.top = y + "px";
-
-  const percentX = ((x / rect.width) * 100).toFixed(1);
-  const percentY = ((y / rect.height) * 100).toFixed(1);
-
-  coordsText.innerHTML =
-    `Pin Position → Left: ${percentX}% • Top: ${percentY}%`;
 
 });
 
