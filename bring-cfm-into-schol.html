@@ -12,35 +12,32 @@ body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#f4f7fb;
-  padding:50px;
+  padding:40px;
+  color:#1f3c58;
 }
 
-/* SECTION */
-
-.map-section{
+.wrapper{
   display:flex;
-  align-items:center;
-  justify-content:center;
   gap:50px;
+  align-items:flex-start;
   flex-wrap:wrap;
 }
 
-/* LEFT SIDE TEXT */
+/* LEFT SIDE */
 
-.info{
-  max-width:350px;
+.sidebar{
+  width:320px;
 }
 
-.info h1{
+.sidebar h1{
   font-size:3rem;
-  color:#1f3c58;
-  margin-bottom:15px;
+  margin-bottom:10px;
 }
 
-.info p{
-  color:#4b5d6b;
+.sidebar p{
   line-height:1.6;
   margin-bottom:25px;
+  color:#5d6b78;
 }
 
 /* FORM */
@@ -48,68 +45,56 @@ body{
 input{
   width:100%;
   padding:14px;
-  border-radius:12px;
   border:none;
-  background:white;
-  box-shadow:0 5px 15px rgba(0,0,0,.08);
+  border-radius:12px;
   margin-bottom:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
   font-size:1rem;
 }
 
 button{
+  border:none;
+  padding:14px 18px;
+  border-radius:12px;
   background:#68b6ba;
   color:white;
-  border:none;
-  padding:14px 20px;
-  border-radius:12px;
   cursor:pointer;
   font-size:1rem;
   transition:.2s;
+  width:100%;
 }
 
 button:hover{
-  background:#4ea2a7;
+  background:#4d9ca0;
 }
 
 /* MAP */
 
 .map-container{
   position:relative;
-  width:380px;
+  width:420px;
 }
 
 .map{
   width:100%;
   user-select:none;
-  -webkit-user-drag:none;
   pointer-events:none;
 }
 
-/* LOCATION PINS */
+/* PINS */
 
-.pin,
-.user-pin{
+.pin{
+  position:absolute;
   width:22px;
   height:22px;
-  position:absolute;
+  background:#efab03;
   border-radius:50% 50% 50% 0;
   transform:rotate(-45deg);
   border:2px solid white;
+  cursor:pointer;
 }
 
-.pin{
-  background:#efab03;
-}
-
-.user-pin{
-  background:#d47571;
-  cursor:grab;
-  z-index:100;
-  display:none;
-}
-
-.pin::after,
-.user-pin::after{
+.pin::after{
   content:'';
   width:8px;
   height:8px;
@@ -141,31 +126,34 @@ button:hover{
   opacity:1;
 }
 
-/* EXISTING LOCATIONS */
+/* ADMIN BOX */
 
-.bath{
-  top:240px;
-  left:265px;
+.admin{
+  margin-top:30px;
+  padding:20px;
+  background:white;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.woolwich{
-  top:225px;
-  left:270px;
+.admin h2{
+  margin-bottom:10px;
 }
 
-.mess{
-  top:150px;
-  left:210px;
+.admin p{
+  font-size:.95rem;
+  color:#5d6b78;
+  margin-bottom:15px;
 }
 
-.sacopee{
-  top:220px;
-  left:140px;
-}
-
-.rockland{
-  top:210px;
-  left:245px;
+.code-box{
+  background:#edf2f7;
+  padding:15px;
+  border-radius:12px;
+  font-family:monospace;
+  font-size:.9rem;
+  overflow:auto;
+  white-space:pre-wrap;
 }
 
 </style>
@@ -173,101 +161,137 @@ button:hover{
 
 <body>
 
-<section class="map-section">
+<div class="wrapper">
 
   <!-- LEFT SIDE -->
-  <div class="info">
+  <div class="sidebar">
 
     <h1>Across Maine</h1>
 
     <p>
-      Code For ME has taught students all across Maine.
-      Add your school or town and drag your pin onto the map!
+      Schools can submit where they’re from,
+      and you can place their pin on the map yourself.
     </p>
 
-    <input type="text" placeholder="Your school or town">
+    <!-- USER FORM -->
+    <input type="text" id="schoolInput" placeholder="School or town">
 
-    <button onclick="showPin()">
-      Add My Pin
+    <button onclick="startPin()">
+      Create Pin
     </button>
 
+    <!-- ADMIN -->
+    <div class="admin">
+
+      <h2>Admin Mode</h2>
+
+      <p>
+        Drag the pin onto the map.  
+        Then copy the generated code below
+        and paste it into your HTML.
+      </p>
+
+      <div class="code-box" id="codeOutput">
+No pin created yet.
+      </div>
+
+    </div>
+
   </div>
 
-  <!-- RIGHT SIDE -->
+  <!-- MAP -->
   <div class="map-container" id="mapContainer">
 
-    <!-- MAP IMAGE -->
     <img src="maine-map.png" class="map">
-
-    <!-- EXISTING PINS -->
-
-    <div class="pin bath">
-      <div class="tooltip">Bath</div>
-    </div>
-
-    <div class="pin woolwich">
-      <div class="tooltip">Woolwich</div>
-    </div>
-
-    <div class="pin mess">
-      <div class="tooltip">Messalonskee</div>
-    </div>
-
-    <div class="pin socopee">
-      <div class="tooltip">Sacopee Valley</div>
-    </div>
-
-    <div class="pin rockland">
-      <div class="tooltip">Rockland</div>
-    </div>
-
-    <!-- USER PIN -->
-    <div class="user-pin" id="userPin"></div>
 
   </div>
 
-</section>
+</div>
 
 <script>
 
-const pin = document.getElementById("userPin");
 const map = document.getElementById("mapContainer");
+const codeOutput = document.getElementById("codeOutput");
 
+let currentPin = null;
 let dragging = false;
 
-function showPin(){
+/* CREATE PIN */
 
-  pin.style.display = "block";
+function startPin(){
 
-  pin.style.left = "180px";
-  pin.style.top = "180px";
+  const schoolName =
+    document.getElementById("schoolInput").value;
+
+  if(schoolName.trim() === ""){
+    alert("Enter a school name first.");
+    return;
+  }
+
+  /* REMOVE OLD TEMP PIN */
+  if(currentPin){
+    currentPin.remove();
+  }
+
+  /* CREATE NEW PIN */
+  currentPin = document.createElement("div");
+  currentPin.classList.add("pin");
+
+  currentPin.innerHTML =
+  `<div class="tooltip">${schoolName}</div>`;
+
+  currentPin.style.left = "180px";
+  currentPin.style.top = "180px";
+
+  map.appendChild(currentPin);
+
+  enableDragging(currentPin, schoolName);
 
 }
 
-pin.addEventListener("mousedown", () => {
-  dragging = true;
-});
+/* DRAGGING */
 
-document.addEventListener("mouseup", () => {
-  dragging = false;
-});
+function enableDragging(pin, schoolName){
 
-document.addEventListener("mousemove", (e) => {
+  pin.addEventListener("mousedown", () => {
+    dragging = true;
+  });
 
-  if(!dragging) return;
+  document.addEventListener("mouseup", () => {
+    dragging = false;
+  });
 
-  const rect = map.getBoundingClientRect();
+  document.addEventListener("mousemove", (e) => {
 
-  let x = e.clientX - rect.left;
-  let y = e.clientY - rect.top;
+    if(!dragging) return;
 
-  x = Math.max(0, Math.min(x, rect.width - 20));
-  y = Math.max(0, Math.min(y, rect.height - 20));
+    const rect = map.getBoundingClientRect();
 
-  pin.style.left = x + "px";
-  pin.style.top = y + "px";
+    let x = e.clientX - rect.left;
+    let y = e.clientY - rect.top;
 
-});
+    x = Math.max(0, Math.min(x, rect.width - 20));
+    y = Math.max(0, Math.min(y, rect.height - 20));
+
+    pin.style.left = x + "px";
+    pin.style.top = y + "px";
+
+    /* GENERATE CODE */
+
+    codeOutput.innerText = `
+<div class="pin"
+     style="left:${x}px; top:${y}px;">
+
+  <div class="tooltip">
+    ${schoolName}
+  </div>
+
+</div>
+`;
+
+  });
+
+}
 
 </script>
 
