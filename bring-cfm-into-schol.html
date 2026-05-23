@@ -1,1 +1,331 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Code For ME • Across Maine</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:linear-gradient(to bottom right,#68b6ba,#7497af);
+  color:white;
+  padding:40px 20px;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.title h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.title p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.6;
+  opacity:.9;
+}
+
+.map-wrapper{
+  max-width:850px;
+  margin:auto;
+  position:relative;
+}
+
+.map{
+  width:100%;
+  border-radius:25px;
+  display:block;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+/* PINS */
+
+.pin{
+  position:absolute;
+  width:28px;
+  height:28px;
+  background:#efab03;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  border:3px solid white;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.pin:hover{
+  transform:rotate(-45deg) scale(1.15);
+  background:#d47571;
+}
+
+.pin::after{
+  content:'';
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50%;
+  position:absolute;
+  top:6px;
+  left:6px;
+}
+
+.tooltip{
+  position:absolute;
+  top:-45px;
+  left:-20px;
+  background:white;
+  color:#333;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:.9rem;
+  white-space:nowrap;
+  display:none;
+}
+
+.pin:hover .tooltip{
+  display:block;
+}
+
+/* EXISTING LOCATIONS */
+
+/* Bath */
+.bath{
+  top:63%;
+  left:72%;
+}
+
+/* Woolwich */
+.woolwich{
+  top:60%;
+  left:73%;
+}
+
+/* Messalonskee */
+.messalonskee{
+  top:40%;
+  left:58%;
+}
+
+/* Sacopee Valley */
+.sacopee{
+  top:57%;
+  left:42%;
+}
+
+/* Rockland */
+.rockland{
+  top:58%;
+  left:66%;
+}
+
+/* USER PIN */
+
+#userPin{
+  position:absolute;
+  width:30px;
+  height:30px;
+  background:#ff4d6d;
+  border-radius:50% 50% 50% 0;
+  transform:rotate(-45deg);
+  border:3px solid white;
+  cursor:grab;
+  display:none;
+  z-index:100;
+}
+
+#userPin::after{
+  content:'';
+  width:10px;
+  height:10px;
+  background:white;
+  border-radius:50%;
+  position:absolute;
+  top:7px;
+  left:7px;
+}
+
+/* FORM */
+
+.form-box{
+  margin-top:30px;
+  background:rgba(255,255,255,.12);
+  padding:25px;
+  border-radius:20px;
+  backdrop-filter:blur(10px);
+}
+
+.form-box h2{
+  margin-bottom:15px;
+}
+
+.form-box p{
+  margin-bottom:20px;
+  opacity:.9;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:12px;
+  margin-bottom:15px;
+  font-size:1rem;
+}
+
+button{
+  background:#efab03;
+  border:none;
+  padding:14px 22px;
+  border-radius:12px;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.25s;
+}
+
+button:hover{
+  background:#d47571;
+}
+
+.coords{
+  margin-top:15px;
+  font-size:.95rem;
+  opacity:.85;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="title">
+  <h1>Code For ME Across Maine</h1>
+
+  <p>
+    We've worked with students across Maine teaching coding,
+    creativity, and technology. Drag your own pin onto the map
+    and show us where you're from!
+  </p>
+</div>
+
+<div class="map-wrapper" id="mapWrapper">
+
+  <!-- MAP IMAGE -->
+  <img src="assets/maine-map.png" class="map" alt="Map of Maine">
+
+  <!-- EXISTING PINS -->
+
+  <div class="pin bath">
+    <div class="tooltip">Bath</div>
+  </div>
+
+  <div class="pin woolwich">
+    <div class="tooltip">Woolwich</div>
+  </div>
+
+  <div class="pin messalonskee">
+    <div class="tooltip">Messalonskee</div>
+  </div>
+
+  <div class="pin socopee">
+    <div class="tooltip">Sacopee Valley</div>
+  </div>
+
+  <div class="pin rockland">
+    <div class="tooltip">Rockland</div>
+  </div>
+
+  <!-- USER DRAGGABLE PIN -->
+  <div id="userPin"></div>
+
+</div>
+
+<!-- FORM -->
+<div class="form-box">
+
+  <h2>Add Your School</h2>
+
+  <p>
+    Type your school or town, then drag the pink pin onto the map
+    to show where you're from.
+  </p>
+
+  <input type="text" id="schoolInput" placeholder="Your school or town">
+
+  <button onclick="showPin()">
+    Add My Pin
+  </button>
+
+  <div class="coords" id="coordsText">
+    Drag the pin anywhere on the map.
+  </div>
+
+</div>
+
+<script>
+
+const pin = document.getElementById("userPin");
+const mapWrapper = document.getElementById("mapWrapper");
+const coordsText = document.getElementById("coordsText");
+
+let isDragging = false;
+
+function showPin(){
+
+  pin.style.display = "block";
+
+  pin.style.left = "50%";
+  pin.style.top = "50%";
+
+}
+
+pin.addEventListener("mousedown", () => {
+  isDragging = true;
+  pin.style.cursor = "grabbing";
+});
+
+document.addEventListener("mouseup", () => {
+  isDragging = false;
+  pin.style.cursor = "grab";
+});
+
+document.addEventListener("mousemove", (e) => {
+
+  if(!isDragging) return;
+
+  const rect = mapWrapper.getBoundingClientRect();
+
+  let x = e.clientX - rect.left;
+  let y = e.clientY - rect.top;
+
+  x = Math.max(0, Math.min(x, rect.width));
+  y = Math.max(0, Math.min(y, rect.height));
+
+  pin.style.left = x + "px";
+  pin.style.top = y + "px";
+
+  const percentX = ((x / rect.width) * 100).toFixed(1);
+  const percentY = ((y / rect.height) * 100).toFixed(1);
+
+  coordsText.innerHTML =
+    `Pin Position → Left: ${percentX}% • Top: ${percentY}%`;
+
+});
+
+</script>
+
+</body>
+</html>
