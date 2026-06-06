@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CodeQuest</title>
+<title>CodeQuest OS</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<div class="hero">
-    <h1>CodeQuest</h1>
-    <p>Learn coding like a game — not a textbook</p>
+<div class="desktop">
 
-    <a href="lesson.html">
-        <button>Start Learning</button>
-    </a>
-</div>
+    <!-- TOP BAR -->
+    <div class="topbar">
+        <div class="logo">🧠 CodeQuest OS</div>
+        <div class="time">Learning Environment</div>
+    </div>
 
-<div class="container">
+    <!-- DESKTOP ICONS -->
+    <div class="icons">
 
-    <div class="grid">
-
-        <div class="card">
-            <h2> HTML Harbor</h2>
-            <p>Build the structure of websites</p>
+        <div class="icon" onclick="openApp('html')">
+            🌐
+            <p>HTML Harbor</p>
         </div>
 
-        <div class="card">
-            <h2> CSS City</h2>
-            <p>Make websites beautiful</p>
+        <div class="icon" onclick="openApp('css')">
+            🎨
+            <p>CSS City</p>
         </div>
 
-        <div class="card">
-            <h2>⚡ JavaScript Junction</h2>
-            <p>Add interactivity & logic</p>
+        <div class="icon" onclick="openApp('js')">
+            ⚡
+            <p>JavaScript</p>
+        </div>
+
+        <div class="icon" onclick="openApp('python')">
+            🐍
+            <p>Python</p>
         </div>
 
     </div>
 
-    <div class="card">
-        <h2> Your Progress</h2>
-        <div class="progress">
-            <div class="progress-fill"></div>
+    <!-- WINDOW -->
+    <div id="window" class="window hidden">
+
+        <div class="window-bar">
+            <span id="title">Lesson</span>
+            <button onclick="closeWindow()">✕</button>
         </div>
+
+        <div id="content" class="window-content"></div>
+
     </div>
 
 </div>
 
+<script src="app.js"></script>
 </body>
 </html>
