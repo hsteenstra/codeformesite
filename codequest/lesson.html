@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lesson</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="hero">
+    <h1> HTML Harbor</h1>
+    <p>Learn how websites are built</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h2>What is HTML?</h2>
+        <p>
+        HTML creates the structure of a website. It tells the browser what to show.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>History</h2>
+        <p>
+        Created by Tim Berners-Lee in 1989 to share information on the early internet.
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Fun Fact</h2>
+        <p>Every website you’ve ever visited uses HTML.</p>
+    </div>
+
+    <div class="card">
+        <h2>Quick Quiz</h2>
+        <p>What does HTML mainly do?</p>
+
+        <button onclick="answer(true)">Creates structure</button>
+        <button onclick="answer(false)">Adds styling</button>
+        <button onclick="answer(false)">Stores data</button>
+
+        <p id="feedback"></p>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
