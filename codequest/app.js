@@ -10,43 +10,42 @@ function openApp(type) {
     title.innerText = "HTML Harbor";
 
     content.innerHTML = `
-      <div class="lessonBlock">
-        HTML is the structure of a webpage. It tells the browser what to display.
+      <div class="block">
+        HTML is the structure of the web. It tells the browser what exists on a page.
       </div>
 
-      <div class="lessonBlock">
-        History: Created by Tim Berners-Lee in 1989 to structure early web documents.
+      <div class="block">
+        Created in 1989 by Tim Berners-Lee to structure early internet documents.
       </div>
 
-      <div class="lessonBlock">
-        Video:
+      <div class="block">
         <iframe width="100%" height="200"
         src="https://www.youtube.com/embed/UB1O30fR-EE"
         allowfullscreen></iframe>
       </div>
 
-      <div class="lessonBlock">
-        Quiz 1: What does HTML do?
+      <div class="block">
+        <strong>Quiz 1:</strong> What does HTML do?
 
-        <div class="option" onclick="check(this,true)">Creates structure</div>
-        <div class="option" onclick="check(this,false)">Adds styling</div>
+        <div class="option" onclick="check(this,true)">Structures content</div>
+        <div class="option" onclick="check(this,false)">Styles content</div>
         <div class="option" onclick="check(this,false)">Stores data</div>
       </div>
 
-      <div class="lessonBlock">
-        Quiz 2: Which tag makes a paragraph?
+      <div class="block">
+        <strong>Quiz 2:</strong> What tag makes a paragraph?
 
         <div class="option" onclick="check(this,true)">&lt;p&gt;</div>
         <div class="option" onclick="check(this,false)">&lt;h1&gt;</div>
         <div class="option" onclick="check(this,false)">&lt;img&gt;</div>
       </div>
 
-      <div class="lessonBlock">
-        Quiz 3: Who created HTML?
+      <div class="block">
+        <strong>Quiz 3:</strong> Who created HTML?
 
         <div class="option" onclick="check(this,true)">Tim Berners-Lee</div>
+        <div class="option" onclick="check(this,false)">Steve Jobs</div>
         <div class="option" onclick="check(this,false)">Bill Gates</div>
-        <div class="option" onclick="check(this,false)">Elon Musk</div>
       </div>
     `;
   }
@@ -55,35 +54,25 @@ function openApp(type) {
     title.innerText = "CSS City";
 
     content.innerHTML = `
-      <div class="lessonBlock">
-        CSS controls the appearance of a website: colors, layout, spacing, design.
+      <div class="block">
+        CSS controls design: colors, layout, spacing, and visual structure.
       </div>
 
-      <div class="lessonBlock">
-        Video:
+      <div class="block">
         <iframe width="100%" height="200"
         src="https://www.youtube.com/embed/yfoY53QXEnI"
         allowfullscreen></iframe>
       </div>
 
-      <div class="lessonBlock">
-        Quiz 1: CSS controls what?
+      <div class="block">
+        <strong>Quiz:</strong> What does CSS control?
 
         <div class="option" onclick="check(this,true)">Design</div>
         <div class="option" onclick="check(this,false)">Logic</div>
-        <div class="option" onclick="check(this,false)">Data storage</div>
-      </div>
-
-      <div class="lessonBlock">
-        Quiz 2: What does CSS stand for?
-
-        <div class="option" onclick="check(this,true)">Cascading Style Sheets</div>
-        <div class="option" onclick="check(this,false)">Computer Style System</div>
-        <div class="option" onclick="check(this,false)">Creative Style Syntax</div>
+        <div class="option" onclick="check(this,false)">Data</div>
       </div>
     `;
   }
-
 }
 
 function check(el, correct) {
