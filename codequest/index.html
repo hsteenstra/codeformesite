@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>CodeQuest</title>
+  <title>CodeQuest OS</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,35 +12,43 @@
 
   <div class="topbar">
     <div class="brand">CodeQuest Learning System</div>
-    <div class="status">Online</div>
+    <div class="status">Session Active</div>
   </div>
 
-  <div class="grid">
+  <div class="main">
 
-    <div class="app" onclick="openApp('html')">
-      <div class="icon"></div>
-      <div class="label">HTML Harbor</div>
+    <div class="panel">
+      <h2>Learning Modules</h2>
+
+      <div class="app" onclick="openApp('html')">
+        <div class="dot"></div>
+        <div>
+          <h3>HTML Harbor</h3>
+          <p>Structure the web through real concepts</p>
+        </div>
+      </div>
+
+      <div class="app" onclick="openApp('css')">
+        <div class="dot blue"></div>
+        <div>
+          <h3>CSS City</h3>
+          <p>Design, layout, and visual systems</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="app" onclick="openApp('css')">
-      <div class="icon"></div>
-      <div class="label">CSS City</div>
-    </div>
-
-    <div class="app" onclick="openApp('js')">
-      <div class="icon"></div>
-      <div class="label">JavaScript Junction</div>
-    </div>
-
-    <div class="app" onclick="openApp('python')">
-      <div class="icon"></div>
-      <div class="label">Python Core</div>
+    <div class="panel right">
+      <h2>System Status</h2>
+      <p>Progress tracking enabled</p>
+      <p>Lesson engine: active</p>
+      <p>Modules loaded: 2</p>
     </div>
 
   </div>
 
   <div id="window" class="window hidden">
-    <div class="windowHeader">
+    <div class="windowTop">
       <div id="title"></div>
       <button onclick="closeApp()">Close</button>
     </div>
