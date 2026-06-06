@@ -1,36 +1,54 @@
 body {
   margin: 0;
   font-family: system-ui;
-  background: #0b0f1a;
-  color: white;
+  background: #070b16;
+  color: #eaeaea;
 }
 
+/* TOP BAR */
 .topbar {
   display: flex;
   justify-content: space-between;
-  padding: 12px 18px;
-  background: #11182a;
-  border-bottom: 1px solid #1f2a44;
+  padding: 14px 18px;
+  background: #0e1426;
+  border-bottom: 1px solid #1c2747;
 }
 
 .brand {
   font-weight: 600;
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(4, 160px);
-  gap: 20px;
-  padding: 40px;
+.status {
+  opacity: 0.6;
 }
 
-.app {
-  background: #121a2e;
-  border: 1px solid #1f2a44;
-  border-radius: 14px;
+/* MAIN LAYOUT */
+.main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* PANELS */
+.panel {
+  background: #0f172a;
+  border: 1px solid #1c2747;
+  border-radius: 16px;
   padding: 18px;
+}
+
+/* APP BUTTONS */
+.app {
+  display: flex;
+  gap: 12px;
+  padding: 14px;
+  margin: 12px 0;
+  background: #111c36;
+  border-radius: 14px;
   cursor: pointer;
   transition: 0.2s;
+  border: 1px solid #1c2747;
 }
 
 .app:hover {
@@ -38,36 +56,38 @@ body {
   border-color: #4c64d8;
 }
 
-.icon {
-  width: 40px;
-  height: 40px;
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff952b;
+  margin-top: 6px;
+}
+
+.dot.blue {
   background: #4c64d8;
-  border-radius: 10px;
-  margin-bottom: 10px;
 }
 
-.label {
-  font-size: 14px;
-}
-
+/* WINDOW SYSTEM */
 .window {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 750px;
+  width: 780px;
   height: 520px;
-  background: #0f1526;
-  border: 1px solid #1f2a44;
+  background: #0b1224;
+  border: 1px solid #26335c;
   border-radius: 16px;
   overflow: hidden;
 }
 
-.windowHeader {
+.windowTop {
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background: #121a2e;
+  background: #101a33;
+  border-bottom: 1px solid #26335c;
 }
 
 .content {
@@ -76,35 +96,37 @@ body {
   height: 100%;
 }
 
-.hidden {
-  display: none;
-}
-
-.lessonBlock {
-  background: #121a2e;
+/* LESSON BLOCKS */
+.block {
+  background: #111c36;
   padding: 14px;
   border-radius: 12px;
   margin-bottom: 12px;
-  border: 1px solid #1f2a44;
+  border: 1px solid #1c2747;
 }
 
+/* QUIZ OPTIONS */
 .option {
   display: block;
-  margin: 6px 0;
   padding: 10px;
+  margin-top: 8px;
+  background: #162243;
   border-radius: 10px;
-  background: #1a2440;
   cursor: pointer;
 }
 
 .option:hover {
-  background: #243255;
+  background: #1e2e57;
 }
 
 .correct {
-  background: #1f6f3d !important;
+  background: #1f7a3a !important;
 }
 
 .wrong {
-  background: #7a1f1f !important;
+  background: #7a1f2a !important;
+}
+
+.hidden {
+  display: none;
 }
