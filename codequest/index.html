@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>CodeQuest OS</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>CodeQuest</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <div class="desktop">
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        <div class="logo">🧠 CodeQuest OS</div>
-        <div class="time">Learning Environment</div>
+  <div class="topbar">
+    <div class="brand">CodeQuest Learning System</div>
+    <div class="status">Online</div>
+  </div>
+
+  <div class="grid">
+
+    <div class="app" onclick="openApp('html')">
+      <div class="icon"></div>
+      <div class="label">HTML Harbor</div>
     </div>
 
-    <!-- DESKTOP ICONS -->
-    <div class="icons">
-
-        <div class="icon" onclick="openApp('html')">
-            🌐
-            <p>HTML Harbor</p>
-        </div>
-
-        <div class="icon" onclick="openApp('css')">
-            🎨
-            <p>CSS City</p>
-        </div>
-
-        <div class="icon" onclick="openApp('js')">
-            ⚡
-            <p>JavaScript</p>
-        </div>
-
-        <div class="icon" onclick="openApp('python')">
-            🐍
-            <p>Python</p>
-        </div>
-
+    <div class="app" onclick="openApp('css')">
+      <div class="icon"></div>
+      <div class="label">CSS City</div>
     </div>
 
-    <!-- WINDOW -->
-    <div id="window" class="window hidden">
-
-        <div class="window-bar">
-            <span id="title">Lesson</span>
-            <button onclick="closeWindow()">✕</button>
-        </div>
-
-        <div id="content" class="window-content"></div>
-
+    <div class="app" onclick="openApp('js')">
+      <div class="icon"></div>
+      <div class="label">JavaScript Junction</div>
     </div>
+
+    <div class="app" onclick="openApp('python')">
+      <div class="icon"></div>
+      <div class="label">Python Core</div>
+    </div>
+
+  </div>
+
+  <div id="window" class="window hidden">
+    <div class="windowHeader">
+      <div id="title"></div>
+      <button onclick="closeApp()">Close</button>
+    </div>
+
+    <div id="content" class="content"></div>
+  </div>
 
 </div>
 
