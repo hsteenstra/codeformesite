@@ -14,13 +14,13 @@ code {
   position: relative;
   padding: 96px 0 56px;
   background:
-    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.2), transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.18), transparent 45%),
-    linear-gradient(180deg, #e6efff 0%, #f3f7ff 55%, #e9f1ff 100%);
+    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.35), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.22), transparent 45%),
+    linear-gradient(160deg, #081633 0%, #102858 55%, #163f87 100%);
   overflow: hidden;
 }
 .learn-hero-title {
-  color: var(--navy) !important;
+  color: #fff !important;
 }
 
 
@@ -183,7 +183,8 @@ code {
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow);
-  border: 1px solid rgba(12, 28, 60, 0.08);
+  border: 1px solid rgba(233, 241, 255, 0.12);
+  background: #071126;
 }
 
 .sandbox-toolbar {
@@ -191,8 +192,8 @@ code {
   align-items: center;
   justify-content: space-between;
   padding: 10px 16px;
-  background: var(--code-bg-2);
-  border-bottom: 1px solid var(--code-line);
+  background: #0b1935;
+  border-bottom: 1px solid rgba(233, 241, 255, 0.12);
 }
 
 .sandbox-filename {
@@ -214,15 +215,22 @@ code {
   transition: transform 0.15s ease;
 }
 
-.sandbox-run:hover { transform: translateY(-1px); }
-.sandbox-run:disabled { opacity: 0.65; cursor: progress; transform: none; }
+.sandbox-run:hover {
+  transform: translateY(-1px);
+}
+
+.sandbox-run:disabled {
+  opacity: 0.65;
+  cursor: progress;
+  transform: none;
+}
 
 .sandbox-code {
   display: block;
   width: 100%;
   min-height: 160px;
   resize: vertical;
-  background: var(--code-bg);
+  background: #050d1f;
   color: #e9f1ff;
   font-family: "JetBrains Mono", monospace;
   font-size: 0.88rem;
@@ -239,22 +247,14 @@ code {
   font-family: "JetBrains Mono", monospace;
   font-size: 0.85rem;
   padding: 14px 20px;
-  border-top: 1px solid var(--code-line);
+  border-top: 1px solid rgba(233, 241, 255, 0.12);
   white-space: pre-wrap;
   min-height: 44px;
 }
 
-.sandbox-output--error { color: #ff9d9d; }
-
-/* ===== CHALLENGE ===== */
-.challenge {
-  background: rgba(247, 181, 0, 0.1);
-  border-left: 3px solid var(--gold);
-  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  padding: 16px 20px;
-  margin-top: 24px;
+.sandbox-output--error {
+  color: #ff9d9d;
 }
-
 .challenge ul { margin: 8px 0 0; padding-left: 20px; }
 .challenge li { margin-bottom: 6px; }
 
