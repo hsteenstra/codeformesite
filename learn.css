@@ -1,10 +1,4 @@
-/* ===== LEARN PAGE TOKENS ===== */
-.learn-hero {
-  background:
-    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.2), transparent 40%),
-    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.18), transparent 45%),
-    linear-gradient(180deg, #e6efff 0%, #f3f7ff 55%, #e9f1ff 100%);
-}
+
 
 code {
   font-family: "JetBrains Mono", "SFMono-Regular", Menlo, monospace;
@@ -20,21 +14,16 @@ code {
   position: relative;
   padding: 96px 0 56px;
   background:
-    radial-gradient(circle at 12% 20%, rgba(35, 201, 184, 0.25), transparent 45%),
-    radial-gradient(circle at 88% 0%, rgba(247, 181, 0, 0.22), transparent 40%),
-    linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, #123a86 100%);
+    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.18), transparent 45%),
+    linear-gradient(180deg, #e6efff 0%, #f3f7ff 55%, #e9f1ff 100%);
   overflow: hidden;
 }
-
-.learn-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
-  background-size: 26px 26px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 75%);
-  pointer-events: none;
+.learn-hero-title {
+  color: var(--navy) !important;
 }
+
+
 
 .learn-hero-inner {
   position: relative;
