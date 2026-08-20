@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learn Python Free — Code For ME</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="learn.css" />
+  </head>
+  <body class="learn-body">
+    <header>
+      <div class="container navbar">
+        <a class="brand" href="index.html">
+          <img class="logo-img" src="assets/logo.png" alt="Code For ME logo" />
+          <span>Code For ME</span>
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="learn.html" class="active">Learn Python</a>
+          <a href="meet-the-team.html">Meet The Team</a>
+          <a href="photo-gallery.html">Photo Gallery</a>
+          <a href="https://payhip.com/CodeForME">Buy Our Textbook</a>
+        </nav>
+        <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join Our List</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="learn-hero">
+        <div class="container learn-hero-inner">
+          <span class="hero-kicker">Free · No Installs · No Account Needed</span>
+          <h1 class="hero-title learn-hero-title">Learn Python, One Stop at a Time</h1>
+          <p class="hero-subtitle learn-hero-subtitle">
+            Six units from your first line of code to a finished project. Every lesson has a real code
+            editor built right in — write it, run it, see what happens, immediately.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#unit-1">Start At Unit 1</a>
+            <a class="button button-secondary" href="#path-nav">See All Units</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STICKY PATH NAV -->
+      <nav class="path-nav" id="path-nav" aria-label="Units">
+        <div class="container path-nav-inner">
+          <a href="#unit-1" class="path-nav-link">1. Foundations</a>
+          <a href="#unit-2" class="path-nav-link">2. Control Flow</a>
+          <a href="#unit-3" class="path-nav-link">3. Loops</a>
+          <a href="#unit-4" class="path-nav-link">4. Functions</a>
+          <a href="#unit-5" class="path-nav-link">5. Data Structures</a>
+          <a href="#unit-6" class="path-nav-link">6. Capstone</a>
+        </div>
+      </nav>
+
+      <div class="container">
+        <p class="pyodide-status" id="pyodide-status">Python engine loads the first time you press Run — give it a few seconds.</p>
+      </div>
+
+      <!-- UNIT 1 -->
+      <section class="unit" id="unit-1">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>1</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 1 · 30–45 min · Beginner</p>
+            <h2 class="unit-title">Foundations</h2>
+            <p>
+              Every program starts with two things: telling the computer something (with <code>print</code>),
+              and remembering something (with a variable). Python reads top to bottom, one line at a time,
+              exactly like a recipe.
+            </p>
+            <p>
+              A variable is just a labeled box. <code>name = "Ava"</code> creates a box called
+              <code>name</code> and puts the text <code>"Ava"</code> inside it. Text goes in quotes — that's
+              called a <em>string</em>. Numbers don't need quotes.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>name = "Ava"
+age = 12
+print("Hello,", name)
+print(name, "is", age, "years old")</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u1">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">practice.py</span>
+                <button class="sandbox-run" id="u1-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u1-code" spellcheck="false">
+# Change the name below, then press Run
+name = "Maine Coder"
+print("Hello,", name)
+print("You just ran your first Python program.")</textarea>
+              <div class="sandbox-output" id="u1-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn</p>
+              <ul>
+                <li>Add a second variable called <code>favorite_language</code> and print a sentence using it.</li>
+                <li>Change <code>age</code> to your own age and print a sentence with both <code>name</code> and <code>age</code>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIT 2 -->
+      <section class="unit" id="unit-2">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>2</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 2 · 30–45 min · Beginner</p>
+            <h2 class="unit-title">Control Flow</h2>
+            <p>
+              Real programs make decisions. An <code>if</code> statement checks whether something is true,
+              and only runs its block when it is. <code>elif</code> checks another condition, and
+              <code>else</code> catches everything left over.
+            </p>
+            <p>
+              Comparisons like <code>&gt;=</code>, <code>==</code>, and <code>!=</code> return
+              <code>True</code> or <code>False</code> — that's what <code>if</code> is actually reading.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>age = 14
+if age >= 13:
+    print("You're a teenager!")
+else:
+    print("Not a teenager yet.")</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u2">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">practice.py</span>
+                <button class="sandbox-run" id="u2-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u2-code" spellcheck="false">
+temperature = 75
+
+if temperature >= 80:
+    print("It's hot outside.")
+elif temperature >= 60:
+    print("It's nice outside.")
+else:
+    print("Bring a jacket.")</textarea>
+              <div class="sandbox-output" id="u2-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn</p>
+              <ul>
+                <li>Add another <code>elif</code> branch for temperatures below 40.</li>
+                <li>Change <code>temperature</code> and re-run until you hit every branch at least once.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIT 3 -->
+      <section class="unit" id="unit-3">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>3</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 3 · 30–45 min · Beginner</p>
+            <h2 class="unit-title">Loops</h2>
+            <p>
+              A <code>for</code> loop repeats a block of code once per item in a sequence — like
+              <code>range(5)</code> (the numbers 0 through 4) or a list of names. A <code>while</code> loop
+              repeats as long as a condition stays true.
+            </p>
+            <p>
+              Loops are how you avoid writing the same line ten times. Anything indented under the loop line
+              runs on every pass.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>for i in range(5):
+    print("Count:", i)</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u3">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">practice.py</span>
+                <button class="sandbox-run" id="u3-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u3-code" spellcheck="false">
+students = ["Ava", "Leo", "Maya"]
+
+for student in students:
+    print(student, "is on the roster")
+
+count = 3
+while count > 0:
+    print("Countdown:", count)
+    count = count - 1</textarea>
+              <div class="sandbox-output" id="u3-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn</p>
+              <ul>
+                <li>Add a fourth name to the <code>students</code> list.</li>
+                <li>Change <code>range(5)</code> to <code>range(0, 10, 2)</code> and predict the output before running it.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIT 4 -->
+      <section class="unit" id="unit-4">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>4</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 4 · 45–60 min · Intermediate</p>
+            <h2 class="unit-title">Functions</h2>
+            <p>
+              A function is a reusable block of code with a name. You define it once with <code>def</code>,
+              give it inputs called <em>parameters</em>, and it can hand a result back with
+              <code>return</code>.
+            </p>
+            <p>
+              <code>return</code> is different from <code>print</code> — <code>print</code> just displays
+              something, while <code>return</code> sends a value back so it can be used elsewhere in your
+              program.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>def greet(name):
+    return "Hello, " + name
+
+print(greet("Maya"))</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u4">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">practice.py</span>
+                <button class="sandbox-run" id="u4-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u4-code" spellcheck="false">
+def add(a, b):
+    return a + b
+
+def square(n):
+    return n * n
+
+print(add(4, 7))
+print(square(5))</textarea>
+              <div class="sandbox-output" id="u4-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn</p>
+              <ul>
+                <li>Write a function <code>is_even(n)</code> that returns <code>True</code> if <code>n</code> is even.</li>
+                <li>Give <code>add</code> a default value for <code>b</code>, like <code>def add(a, b=1):</code>, then call it with just one argument.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIT 5 -->
+      <section class="unit" id="unit-5">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>5</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 5 · 45–60 min · Intermediate</p>
+            <h2 class="unit-title">Data Structures</h2>
+            <p>
+              A <em>list</em> holds an ordered collection — <code>["Ava", "Leo", "Maya"]</code>. A
+              <em>dictionary</em> holds pairs of keys and values — <code>{"Ava": 92, "Leo": 88}</code> — so
+              you can look things up by name instead of position.
+            </p>
+            <p>
+              Lists have built-in tools like <code>.append()</code> to add an item. Dictionaries have
+              <code>.items()</code> to loop over every key and value at once.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>students = ["Ava", "Leo", "Maya"]
+students.append("Sam")
+
+for student in students:
+    print(student)</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u5">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">practice.py</span>
+                <button class="sandbox-run" id="u5-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u5-code" spellcheck="false">
+grades = {"Ava": 92, "Leo": 88, "Maya": 95}
+
+for student, score in grades.items():
+    print(student, "scored", score)
+
+grades["Sam"] = 90
+print("Sam's grade:", grades["Sam"])</textarea>
+              <div class="sandbox-output" id="u5-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn</p>
+              <ul>
+                <li>Add two more students to <code>grades</code>.</li>
+                <li>Loop over <code>grades</code> and print only students who scored 90 or above.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UNIT 6 -->
+      <section class="unit" id="unit-6">
+        <div class="container unit-inner">
+          <div class="unit-marker"><span>6</span></div>
+          <div class="unit-body">
+            <p class="unit-meta">Unit 6 · 60+ min · Capstone</p>
+            <h2 class="unit-title">Capstone: Grade Calculator</h2>
+            <p>
+              Time to combine everything — variables, a function, a loop (hiding inside <code>sum()</code>),
+              and an <code>if</code>/<code>elif</code> chain — into one small but real program.
+            </p>
+            <p>
+              This calculator takes a list of test scores, averages them, and converts that average into a
+              letter grade.
+            </p>
+            <p class="unit-label">Read this example</p>
+            <pre class="code-block"><code>def average(scores):
+    return sum(scores) / len(scores)
+
+def letter_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    else:
+        return "Needs Improvement"</code></pre>
+            <p class="unit-label">Now try it yourself</p>
+            <div class="sandbox" data-sandbox="u6">
+              <div class="sandbox-toolbar">
+                <span class="sandbox-filename">capstone.py</span>
+                <button class="sandbox-run" id="u6-run">▶ Run</button>
+              </div>
+              <textarea class="sandbox-code" id="u6-code" spellcheck="false">
+def average(scores):
+    return sum(scores) / len(scores)
+
+def letter_grade(score):
+    if score >= 90:
+        return "A"
+    elif score >= 80:
+        return "B"
+    elif score >= 70:
+        return "C"
+    else:
+        return "Needs Improvement"
+
+scores = [92, 85, 76, 88]
+avg = average(scores)
+
+print("Average score:", avg)
+print("Letter grade:", letter_grade(avg))</textarea>
+              <div class="sandbox-output" id="u6-output">Press Run to see your output here.</div>
+            </div>
+            <div class="challenge">
+              <p class="unit-label">Your turn — make it yours</p>
+              <ul>
+                <li>Add a second student's list of scores and print their average and letter grade too.</li>
+                <li>Write a function <code>class_average(all_scores)</code> that takes a list of lists and returns the overall average.</li>
+                <li>Change the grade cutoffs to match your own school's grading scale.</li>
+              </ul>
+            </div>
+            <div class="unit-finish">
+              <p>That's the whole path — nice work. Questions or want feedback on your capstone?</p>
+              <a class="button button-primary" href="mailto:codeformaine@gmail.com">Email Us Your Code</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom: 12px;">
+            <img class="logo-img" src="assets/logo.png" alt="Code For ME logo" />
+            <span>Code For ME</span>
+          </div>
+          <p>Free Python lessons for students. For local. From local.</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>Email: <a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <p><a href="resources/what-is-python.html">What Is Python?</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="site.js"></script>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
+    <script src="learn.js"></script>
+  </body>
+</html>
