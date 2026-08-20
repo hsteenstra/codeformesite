@@ -1,8 +1,9 @@
 /* ===== LEARN PAGE TOKENS ===== */
-.learn-body {
-  --code-bg: #0d1730;
-  --code-bg-2: #101c3c;
-  --code-line: rgba(233, 241, 255, 0.14);
+.learn-hero {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(63, 123, 246, 0.2), transparent 40%),
+    radial-gradient(circle at 90% 10%, rgba(247, 181, 0, 0.18), transparent 45%),
+    linear-gradient(180deg, #e6efff 0%, #f3f7ff 55%, #e9f1ff 100%);
 }
 
 code {
