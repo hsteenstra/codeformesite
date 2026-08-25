@@ -15,6 +15,283 @@
   --radius-md: 18px;
   --radius-sm: 12px;
 }
+/* ==========================================
+   CODEFORME PYTHON PLAYGROUND
+   Unique CFM namespace — won't conflict
+   ========================================== */
+
+.cfm-code-launch {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 100px 30px;
+  background: #f5f8fa;
+
+  text-align: center;
+}
+
+.cfm-code-launch__content {
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* EYEBROW */
+
+.cfm-code-launch__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 9px 17px;
+  margin-bottom: 25px;
+
+  border: 1px solid rgba(116, 151, 175, 0.3);
+  border-radius: 50px;
+
+  background: rgba(116, 151, 175, 0.08);
+
+  color: #7497af;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.cfm-code-launch__dot {
+  width: 8px;
+  height: 8px;
+
+  display: inline-block;
+
+  border-radius: 50%;
+  background: #7497af;
+}
+
+/* TITLE */
+
+.cfm-code-launch__title {
+  margin: 0;
+
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(60px, 8vw, 105px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  font-weight: 700;
+
+  color: #263b48;
+}
+
+.cfm-code-launch__title span {
+  display: inline-block;
+
+  padding: 5px 22px 10px;
+
+  color: white;
+  background: #7497af;
+
+  border-radius: 18px;
+
+  transform: rotate(-1.5deg);
+
+  box-shadow: 8px 8px 0 rgba(116, 151, 175, 0.15);
+}
+
+/* DESCRIPTION */
+
+.cfm-code-launch__description {
+  max-width: 650px;
+
+  margin: 35px auto 0;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 600;
+
+  color: #5f707b;
+}
+
+/* BUTTON */
+
+.cfm-code-launch__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  margin-top: 35px;
+  padding: 17px 24px 17px 28px;
+
+  border-radius: 14px;
+
+  background: #7497af;
+  color: white;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow: 0 7px 0 #5e7f95;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.cfm-code-launch__button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 #5e7f95;
+  background: #688da7;
+}
+
+.cfm-code-launch__button:active {
+  transform: translateY(3px);
+  box-shadow: 0 3px 0 #5e7f95;
+}
+
+/* ARROW */
+
+.cfm-code-launch__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  font-size: 21px;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.cfm-code-launch__button:hover .cfm-code-launch__arrow {
+  transform: translateX(4px);
+}
+
+/* SMALL NOTE */
+
+.cfm-code-launch__note {
+  margin-top: 22px;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #8a9aa4;
+}
+
+/* DECORATIVE CODE */
+
+.cfm-code-launch__decor {
+  position: absolute;
+
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 600;
+
+  color: rgba(116, 151, 175, 0.07);
+
+  pointer-events: none;
+  user-select: none;
+}
+
+.cfm-code-launch__decor--left {
+  left: 5%;
+  top: 15%;
+
+  font-size: 130px;
+
+  transform: rotate(-12deg);
+}
+
+.cfm-code-launch__decor--right {
+  right: 5%;
+  bottom: 12%;
+
+  font-size: 110px;
+
+  transform: rotate(10deg);
+}
+
+/* DECORATIVE CIRCLES */
+
+.cfm-code-launch::before {
+  content: "";
+
+  position: absolute;
+
+  width: 430px;
+  height: 430px;
+
+  top: -250px;
+  right: -100px;
+
+  border: 1px solid rgba(116, 151, 175, 0.09);
+  border-radius: 50%;
+}
+
+.cfm-code-launch::after {
+  content: "";
+
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  bottom: -220px;
+  left: -100px;
+
+  border: 1px solid rgba(116, 151, 175, 0.08);
+  border-radius: 50%;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .cfm-code-launch {
+    padding: 75px 20px 80px;
+  }
+
+  .cfm-code-launch__title {
+    font-size: clamp(55px, 16vw, 78px);
+    letter-spacing: -3px;
+  }
+
+  .cfm-code-launch__title span {
+    padding: 4px 14px 8px;
+    border-radius: 14px;
+  }
+
+  .cfm-code-launch__description {
+    font-size: 17px;
+    margin-top: 28px;
+  }
+
+  .cfm-code-launch__button {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 15px;
+  }
+
+  .cfm-code-launch__decor {
+    display: none;
+  }
+}
 
 * { box-sizing: border-box; }
 
