@@ -1,89 +1,761 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Code For ME</title>
+
+    <title>Code For ME | Newsletter Archives</title>
+
     <link rel="icon" type="image/svg+xml" href="/cfm_pics/favicon.svg" />
     <link rel="icon" type="image/png" sizes="32x32" href="/cfm_pics/favicon-32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/cfm_pics/apple-touch-icon.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
+
+    <!-- =========================================
+         NEWSLETTER PAGE STYLES
+         Everything below is page-specific.
+    ========================================== -->
+    <style>
+      .newsletter-page {
+        background:
+          radial-gradient(circle at 85% 10%, rgba(104, 182, 186, 0.16), transparent 28%),
+          radial-gradient(circle at 10% 30%, rgba(239, 171, 3, 0.10), transparent 25%),
+          #f8faf9;
+        min-height: 100vh;
+      }
+
+      /* HERO */
+      .newsletter-hero {
+        position: relative;
+        overflow: hidden;
+        padding: 110px 20px 85px;
+        background: linear-gradient(
+          135deg,
+          #7497af 0%,
+          #68b6ba 58%,
+          #83c6c3 100%
+        );
+        color: white;
+      }
+
+      .newsletter-hero::before {
+        content: "";
+        position: absolute;
+        width: 380px;
+        height: 380px;
+        border: 1px solid rgba(255,255,255,0.22);
+        border-radius: 50%;
+        right: -100px;
+        top: -150px;
+      }
+
+      .newsletter-hero::after {
+        content: "";
+        position: absolute;
+        width: 260px;
+        height: 260px;
+        border: 1px solid rgba(255,255,255,0.16);
+        border-radius: 50%;
+        left: -100px;
+        bottom: -150px;
+      }
+
+      .newsletter-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 850px;
+      }
+
+      .newsletter-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border: 1px solid rgba(255,255,255,0.35);
+        background: rgba(255,255,255,0.12);
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+      }
+
+      .newsletter-hero h1 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(48px, 8vw, 82px);
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+        margin: 0 0 22px;
+        max-width: 780px;
+      }
+
+      .newsletter-hero p {
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 650px;
+        margin: 0;
+        color: rgba(255,255,255,0.92);
+      }
+
+      /* CONTENT */
+      .newsletter-section {
+        padding: 85px 20px;
+      }
+
+      .newsletter-section-heading {
+        max-width: 760px;
+        margin-bottom: 42px;
+      }
+
+      .newsletter-section-heading .eyebrow {
+        color: #7497af;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+      }
+
+      .newsletter-section-heading h2 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(34px, 5vw, 50px);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+        margin: 0 0 12px;
+      }
+
+      .newsletter-section-heading p {
+        color: #65727a;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      /* FEATURED AUGUST CARD */
+      .featured-newsletter {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 0;
+        overflow: hidden;
+        border-radius: 28px;
+        background: white;
+        border: 1px solid rgba(116,151,175,0.18);
+        box-shadow: 0 22px 60px rgba(45, 72, 84, 0.12);
+        margin-bottom: 100px;
+      }
+
+      .featured-main {
+        padding: 52px;
+        background:
+          linear-gradient(
+            145deg,
+            rgba(104,182,186,0.10),
+            rgba(255,255,255,0.8)
+          );
+      }
+
+      .featured-label {
+        display: inline-block;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: #efab03;
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        margin-bottom: 22px;
+      }
+
+      .featured-main h2 {
+        font-family: "Outfit", sans-serif;
+        font-size: clamp(38px, 5vw, 62px);
+        line-height: 0.98;
+        letter-spacing: -0.04em;
+        margin: 0 0 18px;
+      }
+
+      .featured-date {
+        color: #7497af;
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 22px;
+      }
+
+      .featured-description {
+        color: #5d6970;
+        font-size: 16px;
+        line-height: 1.75;
+        max-width: 570px;
+        margin-bottom: 30px;
+      }
+
+      .newsletter-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 20px;
+        border-radius: 12px;
+        background: #7497af;
+        color: white !important;
+        text-decoration: none !important;
+        font-weight: 700;
+        font-size: 14px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .newsletter-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(116,151,175,0.25);
+      }
+
+      .featured-preview {
+        min-height: 390px;
+        background:
+          linear-gradient(
+            145deg,
+            #7497af,
+            #68b6ba
+          );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 35px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .featured-preview::before {
+        content: "NEWSLETTER";
+        position: absolute;
+        font-family: "Outfit", sans-serif;
+        font-weight: 700;
+        font-size: 85px;
+        line-height: 0.8;
+        color: rgba(255,255,255,0.08);
+        transform: rotate(-12deg);
+        white-space: nowrap;
+      }
+
+      .newsletter-paper {
+        position: relative;
+        z-index: 2;
+        width: min(290px, 90%);
+        min-height: 320px;
+        padding: 30px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 22px 45px rgba(25,55,65,0.22);
+        transform: rotate(2deg);
+      }
+
+      .newsletter-paper-top {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        color: #7497af;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+
+      .newsletter-paper h3 {
+        font-family: "Outfit", sans-serif;
+        font-size: 31px;
+        line-height: 1;
+        margin: 0 0 18px;
+      }
+
+      .paper-line {
+        height: 7px;
+        background: #e9eeee;
+        border-radius: 10px;
+        margin: 9px 0;
+      }
+
+      .paper-line.short {
+        width: 65%;
+      }
+
+      .paper-block {
+        height: 75px;
+        background: #e9eeee;
+        margin: 20px 0;
+        border-radius: 4px;
+      }
+
+      /* ARCHIVE */
+      .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+
+      .archive-card {
+        background: white;
+        border: 1px solid rgba(116,151,175,0.16);
+        border-radius: 20px;
+        padding: 30px;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .archive-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 35px rgba(45,72,84,0.10);
+      }
+
+      .archive-month {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #68b6ba;
+        margin-bottom: 14px;
+      }
+
+      .archive-card h3 {
+        font-family: "Outfit", sans-serif;
+        font-size: 27px;
+        letter-spacing: -0.025em;
+        margin: 0 0 12px;
+      }
+
+      .archive-card p {
+        color: #69757c;
+        font-size: 14px;
+        line-height: 1.65;
+        margin: 0 0 24px;
+      }
+
+      .archive-link {
+        color: #7497af;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .archive-link:hover {
+        text-decoration: underline;
+      }
+
+      /* FOOTER */
+      .footer {
+        margin-top: 0;
+      }
+
+      /* MOBILE */
+      @media (max-width: 850px) {
+        .newsletter-hero {
+          padding: 85px 20px 70px;
+        }
+
+        .featured-newsletter {
+          grid-template-columns: 1fr;
+        }
+
+        .featured-main {
+          padding: 35px 28px;
+        }
+
+        .featured-preview {
+          min-height: 350px;
+        }
+
+        .archive-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .newsletter-section {
+          padding: 65px 20px;
+        }
+      }
+
+      @media (max-width: 500px) {
+        .newsletter-hero h1 {
+          font-size: 48px;
+        }
+
+        .featured-main h2 {
+          font-size: 42px;
+        }
+
+        .featured-main {
+          padding: 30px 22px;
+        }
+
+        .featured-preview {
+          padding: 25px;
+        }
+      }
+    </style>
   </head>
+
   <body>
+
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
+
     <header>
       <div class="container navbar">
+
         <a class="brand" href="index.html">
-          <img class="logo-img" src="cfm_pics/logo.png" alt="Code For ME logo" />
+          <img
+            class="logo-img"
+            src="cfm_pics/logo.png"
+            alt="Code For ME logo"
+          />
           <span>Code For ME</span>
         </a>
-        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+
+        <button
+          class="menu-toggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
           <span></span>
           <span></span>
           <span></span>
         </button>
+
         <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="meet-the-team.html">Meet The Team</a>
           <a href="photo-gallery.html">Photo Gallery</a>
           <a href="learn.html">CodeCourse</a>
-          <a href="https://payhip.com/CodeForME">Buy Our Textbook</a>
+          <a href="https://payhip.com/CodeForME">
+            Buy Our Textbook
+          </a>
         </nav>
-        <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join Our List</a>
+
+        <a
+          class="nav-cta"
+          href="https://forms.gle/ZRRLeQ5z7N4fdeMA8"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Join Our List
+        </a>
+
       </div>
     </header>
 
-    <main>
-      <section class="hero-stage">
-        <div class="container hero-content">
-          <span class="hero-kicker">Photo Gallery</span>
-          <h1 class="hero-title">Snapshots from Code For ME</h1>
-          <p class="hero-subtitle">Photos from our camps and community learning moments.</p>
-          <div class="scroll-cue">
-            <span>Scroll for the gallery</span>
-            <div class="scroll-dot"></div>
+
+    <main class="newsletter-page">
+
+      <!-- =========================================
+           HERO
+      ========================================== -->
+
+      <section class="newsletter-hero">
+
+        <div class="container newsletter-hero-content">
+
+          <div class="newsletter-kicker">
+            Code For ME
           </div>
+
+          <h1>
+            The Code For ME Newsletter
+          </h1>
+
+          <p>
+            Stories, updates, projects, and everything happening
+            in the Code For ME community. Catch up on our latest
+            news or explore past editions.
+          </p>
+
         </div>
+
       </section>
 
-      <section class="section">
+
+      <!-- =========================================
+           FEATURED NEWSLETTER
+      ========================================== -->
+
+      <section class="newsletter-section">
+
         <div class="container">
-          <div class="gallery-grid">
-            <figure class="gallery-item reveal"><img src="cfm_pics/IMG_0033.jpeg" alt="Code For ME camp photo 1" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/IMG_0044.jpeg" alt="Code For ME camp photo 2" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/IMG_2579.jpeg" alt="Code For ME camp photo 3" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/unnamed.jpg" alt="Code For ME camp photo 4" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/unnamed-1.jpg" alt="Code For ME camp photo 5" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/unnamed-2.jpg" alt="Code For ME camp photo 6" /></figure>
-            <figure class="gallery-item reveal"><img src="cfm_pics/unnamed-3.jpg" alt="Code For ME camp photo 7" /></figure>
+
+          <div class="newsletter-section-heading">
+
+            <div class="eyebrow">
+              Latest Edition
+            </div>
+
+            <h2>
+              Start here.
+            </h2>
+
+            <p>
+              Our newest newsletter is where you'll find the latest
+              from Code For ME.
+            </p>
+
           </div>
+
+
+          <article class="featured-newsletter">
+
+            <div class="featured-main">
+
+              <span class="featured-label">
+                Featured
+              </span>
+
+              <h2>
+                A summer of building.
+              </h2>
+
+              <div class="featured-date">
+                August 2026
+              </div>
+
+              <p class="featured-description">
+                Python camps, new teachers, new classes, and plenty
+                of new ways to use code. Take a look back at everything
+                we built together this summer.
+              </p>
+
+              <a
+                class="newsletter-button"
+                href="https://hsteenstra.github.io/augustnewsletter/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read the August newsletter
+                <span>→</span>
+              </a>
+
+            </div>
+
+
+            <div class="featured-preview">
+
+              <div class="newsletter-paper">
+
+                <div class="newsletter-paper-top">
+                  Code For ME · 2026
+                </div>
+
+                <h3>
+                  A summer<br />
+                  of building.
+                </h3>
+
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+
+                <div class="paper-block"></div>
+
+                <div class="paper-line"></div>
+                <div class="paper-line short"></div>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- =========================================
+               PAST NEWSLETTERS
+          ========================================== -->
+
+          <div class="newsletter-section-heading">
+
+            <div class="eyebrow">
+              The Archive
+            </div>
+
+            <h2>
+              Past newsletters
+            </h2>
+
+            <p>
+              Missed an update? Browse previous editions of the
+              Code For ME newsletter.
+            </p>
+
+          </div>
+
+
+          <div class="archive-grid">
+
+
+            <!-- JUNE -->
+
+            <article class="archive-card">
+
+              <span class="archive-month">
+                June 2026
+              </span>
+
+              <h3>
+                June Newsletter
+              </h3>
+
+              <p>
+                Catch up on what was happening with Code For ME
+                as summer got underway.
+              </p>
+
+              <a
+                class="archive-link"
+                href="https://sites.google.com/view/codeformejune"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read newsletter →
+              </a>
+
+            </article>
+
+
+            <!-- APRIL -->
+
+            <article class="archive-card">
+
+              <span class="archive-month">
+                April 2026
+              </span>
+
+              <h3>
+                April Newsletter
+              </h3>
+
+              <p>
+                Explore an earlier edition of the Code For ME
+                newsletter and see what we were building this spring.
+              </p>
+
+              <a
+                class="archive-link"
+                href="https://drive.google.com/file/d/1kNhFwtCz9YUHAu30QGVCzqZmKvaRWpY-/view"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read newsletter →
+              </a>
+
+            </article>
+
+
+            <!-- MARCH -->
+
+            <article class="archive-card">
+
+              <span class="archive-month">
+                March 2026
+              </span>
+
+              <h3>
+                March Newsletter
+              </h3>
+
+              <p>
+                Go back to one of our earlier newsletter editions
+                from the beginning of the year.
+              </p>
+
+              <a
+                class="archive-link"
+                href="https://drive.google.com/file/d/1mcRUzEW66e6AYLVSjblSxIOnkBMGwsDn/view"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read newsletter →
+              </a>
+
+            </article>
+
+
+          </div>
+
         </div>
+
       </section>
+
     </main>
 
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer class="footer">
+
       <div class="container footer-grid">
+
         <div>
-          <div class="brand" style="margin-bottom: 12px;">
-            <img class="logo-img" src="cfm_pics/logo.png" alt="Code For ME logo" />
+
+          <div
+            class="brand"
+            style="margin-bottom: 12px;"
+          >
+            <img
+              class="logo-img"
+              src="cfm_pics/logo.png"
+              alt="Code For ME logo"
+            />
+
             <span>Code For ME</span>
           </div>
-          <p>Free Python Coding Camp For Students. For Local. From Local.</p>
+
+          <p>
+            Free Python Coding Camp For Students.
+            For Local. From Local.
+          </p>
+
         </div>
+
+
         <div>
+
           <h4>Contact</h4>
-          <p>Email: <a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+
+          <p>
+            Email:
+            <a href="mailto:codeformaine@gmail.com">
+              codeformaine@gmail.com
+            </a>
+          </p>
+
         </div>
+
+
         <div>
+
           <h4>Resources</h4>
-          <p><a href="resources/what-is-python.html">What is Python?</a></p>
+
+          <p>
+            <a href="resources/what-is-python.html">
+              What is Python?
+            </a>
+          </p>
+
           <p></p>
+
         </div>
+
       </div>
+
     </footer>
 
+
     <script src="site.js"></script>
+
   </body>
 </html>
+```
