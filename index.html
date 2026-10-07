@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Code For ME | Free Coding Resources for Every Classroom</title>
+    <meta name="description" content="Free coding lessons, tools, and books for kids and teachers in Maine. Find exactly where to start, from kindergarten to high school." />
+    <meta property="og:title" content="Code For ME | Free Coding Resources for Every Classroom" />
+    <meta property="og:description" content="Free coding lessons, tools, and books for kids and teachers in Maine. Find exactly where to start, from kindergarten to high school." />
+    <meta property="og:image" content="https://www.codeforme.org/assets/web/pic1.jpg" />
+    <meta name="theme-color" content="#7497af" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="" width="42" height="42" />
+          <span>Code For ME</span>
+        </a>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav" id="site-nav" aria-label="Main">
+          <a href="index.html#start">Start Here</a>
+          <a href="index.html#workbook">Workbook</a>
+          <a href="index.html#tools">Free Tools</a>
+          <a href="learn.html">CodeCourse</a>
+          <a href="meet-the-team.html">Our Team</a>
+          <a href="photo-gallery.html">News</a>
+          <a class="btn btn--primary btn--sm" href="https://payhip.com/CodeForME" target="_blank" rel="noreferrer">Buy the Textbook</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- ================= HERO ================= -->
+      <section class="hero">
+        <div class="container hero__grid">
+          <div>
+            <a class="hero__new" href="#workbook" data-reveal>
+              <span class="badge-new">NEW</span>
+              Python Workbook
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <h1 data-reveal style="--i:1"><span class="line">Code</span> <span class="line">For <span class="mark">ME</span></span></h1>
+            <div class="hero__actions" data-reveal style="--i:3">
+              <a class="btn btn--primary" href="#start">Find where to start <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+              <a class="btn btn--outline" href="https://hsteenstra.github.io/sandbox/" target="_blank" rel="noreferrer">Try coding <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </div>
+
+          <div class="hero__buddy" data-reveal="scale" style="--i:2" aria-hidden="true">
+            <img src="assets/byte.png" alt="" width="364" height="428" />
+            <div class="speech">Hi, I'm Byte!</div>
+            <div class="float-chip float-chip--a" data-parallax="0.12"><span class="k">print</span>(<span class="s">"Hello!"</span>)</div>
+            <div class="float-chip float-chip--b" data-parallax="-0.08"><span class="k">for</span> i <span class="k">in</span> range(3):</div>
+            <div class="float-chip float-chip--c" data-parallax="0.18">move_forward()</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TICKER ================= -->
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Coding Camps</span><span>Tutorials</span><span>Resources</span><span>Python</span><span>Robots &amp; Games</span><span>Free For Every Classroom</span>
+          <span>Coding Camps</span><span>Tutorials</span><span>Resources</span><span>Python</span><span>Robots &amp; Games</span><span>Free For Every Classroom</span>
+          <span>Coding Camps</span><span>Tutorials</span><span>Resources</span><span>Python</span>
+        </div>
+      </div>
+
+      <!-- ================= WHO'S CODING TODAY? ================= -->
+      <section class="section who" id="start">
+        <div class="container">
+          <div class="who__head">
+            <div>
+              <p class="eyebrow" data-reveal>Start here</p>
+              <h2 data-reveal style="--i:1">Who's coding today?</h2>
+            </div>
+            <div class="byte-says" data-reveal="right" style="--i:2">
+              <img src="assets/byte.png" alt="" width="364" height="428" />
+              <p>Pick the one that sounds like you. I'll show you exactly what to do first!</p>
+            </div>
+          </div>
+
+          <nav class="who__grid" aria-label="Choose who you are" data-stagger>
+            <a class="who-card" href="#elementary" data-level="elementary" data-reveal="pop">
+              <span class="who-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><rect x="8" y="3" width="8" height="8" rx="1.5"/></svg></span>
+              <span class="who-card__im">I'm in</span>
+              <span class="who-card__grade">Grades K&ndash;5</span>
+              <span class="who-card__label">Elementary</span>
+              <p>Brand new to coding? Start with blocks and robots.</p>
+              <span class="who-card__go">Show me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+            </a>
+            <a class="who-card" href="#middle" data-level="middle" data-reveal="pop">
+              <span class="who-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg></span>
+              <span class="who-card__im">I'm in</span>
+              <span class="who-card__grade">Grades 6&ndash;8</span>
+              <span class="who-card__label">Middle School</span>
+              <p>Ready to type real code? Make the jump to Python.</p>
+              <span class="who-card__go">Show me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+            </a>
+            <a class="who-card" href="#high" data-level="high" data-reveal="pop">
+              <span class="who-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m7 10 3 2-3 2M13 15h4"/></svg></span>
+              <span class="who-card__im">I'm in</span>
+              <span class="who-card__grade">Grades 9&ndash;12</span>
+              <span class="who-card__label">High School</span>
+              <p>Learn on your own, build projects, and even teach others.</p>
+              <span class="who-card__go">Show me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+            </a>
+            <a class="who-card" href="#educator" data-level="educator" data-reveal="pop">
+              <span class="who-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l2-4M16 20l-2-4M7 9h6M7 12h4"/></svg></span>
+              <span class="who-card__im">I'm a</span>
+              <span class="who-card__grade">Teacher or Parent</span>
+              <span class="who-card__label">Educators</span>
+              <p>Answer keys, classroom tools, and books. No coding experience needed.</p>
+              <span class="who-card__go">Show me <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
+            </a>
+          </nav>
+          <p class="who__help" data-reveal>Not sure? Pick by what you've done before, not your age. You can always start one level lower.</p>
+        </div>
+      </section>
+
+      <!-- ================= PATHS ================= -->
+      <section class="section levels">
+        <div class="container">
+          <div class="levels__layout">
+            <aside class="levels__rail" aria-label="Levels">
+              <h3>Jump to a path</h3>
+              <ol>
+                <li><a href="#elementary"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><rect x="8" y="3" width="8" height="8" rx="1.5"/></svg></span><span>Elementary<small>Grades K&ndash;5</small></span></a></li>
+                <li><a href="#middle"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg></span><span>Middle School<small>Grades 6&ndash;8</small></span></a></li>
+                <li><a href="#high"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m7 10 3 2-3 2M13 15h4"/></svg></span><span>High School<small>Grades 9&ndash;12</small></span></a></li>
+                <li><a href="#educator"><span class="num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l2-4M16 20l-2-4M7 9h6M7 12h4"/></svg></span><span>Educators<small>Teachers &amp; parents</small></span></a></li>
+              </ol>
+              <p class="levels__rail-note">Questions? <a class="text-link" href="mailto:codeformaine@gmail.com">Email us</a></p>
+            </aside>
+
+            <div class="levels__content">
+              <nav class="levels__tabs" aria-label="Levels">
+                <a href="#elementary">K&ndash;5</a>
+                <a href="#middle">6&ndash;8</a>
+                <a href="#high">9&ndash;12</a>
+                <a href="#educator">Teachers</a>
+              </nav>
+
+              <!-- Elementary -->
+              <article class="level" id="elementary" data-level="elementary">
+                <header class="level__head" data-reveal>
+                  <span class="level__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="13" width="8" height="8" rx="1.5"/><rect x="13" y="13" width="8" height="8" rx="1.5"/><rect x="8" y="3" width="8" height="8" rx="1.5"/></svg></span>
+                  <div>
+                    <p class="level__kicker">Elementary &middot; Grades K&ndash;5</p>
+                    <h3>Your path: blocks to real code</h3>
+                  </div>
+                </header>
+                <ol class="steps" data-stagger>
+                  <li class="step step--start" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Code For ME Kids <span class="tag tag--start">START HERE</span></h4>
+                        <p>Build your own robot, snap blocks together, and see them turn into real Python. 19 lessons.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--primary btn--sm" href="https://hsteenstra.github.io/codeformekids/lesson.html?id=1-1" target="_blank" rel="noreferrer">Start Lesson 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>The Free Playground</h4>
+                        <p>Finished the lessons? Design your own mazes and remix games.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="https://hsteenstra.github.io/codeformekids/playground.html" target="_blank" rel="noreferrer">Open the Playground <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Classroom posters <span class="tag tag--adults">FOR GROWN-UPS</span></h4>
+                        <p>Free posters that explain big ideas, like variables. Print them for your room.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="assets/posters/poster1.png" download>Poster 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+                        <a class="btn btn--outline btn--sm" href="assets/posters/poster2.png" download>Poster 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+                        <a class="btn btn--outline btn--sm" href="assets/posters/poster3.png" download>Poster 3 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </article>
+
+              <!-- Middle school -->
+              <article class="level" id="middle" data-level="middle">
+                <header class="level__head" data-reveal>
+                  <span class="level__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2z"/><path d="M22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"/></svg></span>
+                  <div>
+                    <p class="level__kicker">Middle School &middot; Grades 6&ndash;8</p>
+                    <h3>Your path: make the jump to Python</h3>
+                  </div>
+                </header>
+                <ol class="steps" data-stagger>
+                  <li class="step step--start" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Code For ME Kids <span class="tag tag--start">START HERE</span></h4>
+                        <p>Never typed code before? Warm up here and go from blocks to text.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--mint btn--sm" href="https://hsteenstra.github.io/codeformekids/" target="_blank" rel="noreferrer">Visit Code For ME Kids <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>The Python Workbook <span class="tag tag--new">NEW</span></h4>
+                        <p>Work through it page by page: print, variables, loops, turtle art, and games.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--dark btn--sm" href="https://hsteenstra.github.io/workbook/" target="_blank" rel="noreferrer">Open the Workbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Practice in the Sandbox</h4>
+                        <p>Try every example for real. Type it, press Run, and see what happens.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="https://hsteenstra.github.io/sandbox/" target="_blank" rel="noreferrer">Open the Sandbox <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>5-Day Python Camp <span class="tag tag--adults">FOR TEACHERS</span></h4>
+                        <p>Our textbook lets any teacher run a week-long beginner Python camp.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="#textbook">About the textbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </article>
+
+              <!-- High school -->
+              <article class="level" id="high" data-level="high">
+                <header class="level__head" data-reveal>
+                  <span class="level__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="m7 10 3 2-3 2M13 15h4"/></svg></span>
+                  <div>
+                    <p class="level__kicker">High School &middot; Grades 9&ndash;12</p>
+                    <h3>Your path: learn, build, then lead</h3>
+                  </div>
+                </header>
+                <ol class="steps" data-stagger>
+                  <li class="step step--start" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>The Python Workbook <span class="tag tag--start">START HERE</span></h4>
+                        <p>Move at your own speed, from the basics all the way to designing your own game.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--dark btn--sm" href="https://hsteenstra.github.io/workbook/" target="_blank" rel="noreferrer">Open the Workbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>CodeCourse</h4>
+                        <p>Six levels of real Python with an editor built in. Finish with a capstone project.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="learn.html">Start CodeCourse <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Build your first website</h4>
+                        <p>With <em>Teach It. Code It. Build It!</em>, learn HTML and CSS by making a real site.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="https://payhip.com/CodeForME" target="_blank" rel="noreferrer">See the handbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Lead your own camp</h4>
+                        <p>Feeling confident? Use the 5-Day Python Textbook to teach younger students.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="#textbook">About the textbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+              </article>
+
+              <!-- Educators -->
+              <article class="level" id="educator" data-level="educator">
+                <header class="level__head" data-reveal>
+                  <span class="level__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20l2-4M16 20l-2-4M7 9h6M7 12h4"/></svg></span>
+                  <div>
+                    <p class="level__kicker">Teachers &amp; Parents</p>
+                    <h3>Your toolkit: no coding experience needed</h3>
+                  </div>
+                </header>
+                <ol class="steps" data-stagger>
+                  <li class="step step--start" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Pick your students' path <span class="tag tag--start">START HERE</span></h4>
+                        <p>Choose their grade above and send them the link to their Step 1.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="#start">Choose a grade <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Teacher Workbook <span class="tag">ANSWER KEY</span></h4>
+                        <p>The teacher edition of the Workbook, for checking students' answers.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--dark btn--sm" href="https://hsteenstra.github.io/teacherworksheet/" target="_blank" rel="noreferrer">Open Teacher Edition <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Python Sandbox for class</h4>
+                        <p>Runs in any browser, even on school Chromebooks. No downloads or accounts.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="https://hsteenstra.github.io/sandbox/" target="_blank" rel="noreferrer">Open the Sandbox <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="step" data-reveal>
+                    <div class="step__card">
+                      <div>
+                        <h4>Books for your classroom</h4>
+                        <p>The 5-Day Python Textbook and the HTML &amp; CSS handbook.</p>
+                      </div>
+                      <div class="step__actions">
+                        <a class="btn btn--outline btn--sm" href="https://payhip.com/CodeForME" target="_blank" rel="noreferrer">Shop the books <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                      </div>
+                    </div>
+                  </li>
+                </ol>
+                <p class="level__more" data-reveal>Want help planning? Email <a class="text-link" href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= WORKBOOK (NEW) ================= -->
+      <section class="section section--sky" id="workbook">
+        <div class="container">
+          <div class="workbook" data-reveal="scale">
+            <div>
+              <span class="badge-new">NEW</span>
+              <h2>The Intro to Python <span class="mark">Workbook</span></h2>
+              <p class="lead">A free workbook to keep beside you while you code. Read it, try every example, and flip back whenever you need a reminder.</p>
+              <div class="workbook__stats" data-stagger>
+                <div data-reveal="pop"><strong>73</strong><span>pages</span></div>
+                <div data-reveal="pop"><strong>13</strong><span>topics</span></div>
+                <div data-reveal="pop"><strong>$0</strong><span>always free</span></div>
+              </div>
+              <div class="workbook__actions">
+                <a class="btn btn--primary" href="https://hsteenstra.github.io/workbook/" target="_blank" rel="noreferrer">Open the Workbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+                <a class="btn btn--outline" href="https://hsteenstra.github.io/teacherworksheet/" target="_blank" rel="noreferrer">Teacher edition</a>
+              </div>
+            </div>
+
+            <div class="notebook" data-reveal="right" style="--i:2" aria-hidden="true">
+              <div class="notebook__tabs">
+                <span style="background:var(--sun)"></span>
+                <span style="background:var(--mint)"></span>
+                <span style="background:var(--grape)"></span>
+                <span style="background:var(--coral)"></span>
+              </div>
+              <div class="notebook__title">print() &ndash; Talking to the Screen</div>
+              <div class="notebook__box nb-def"><b>Definition</b><code>print()</code> shows text or values on the screen.</div>
+              <div class="notebook__box nb-mistake"><b>Common mistake</b>Forgetting the quotes: <code>print(Hello)</code></div>
+              <div class="notebook__box nb-try"><b>Try it</b>Write a line of code that prints your name.</div>
+            </div>
+          </div>
+
+          <div class="workbook__chips" data-stagger aria-label="What's inside">
+            <span class="chip chip--sun" data-reveal="pop">First Steps</span>
+            <span class="chip chip--mint" data-reveal="pop">Data &amp; Variables</span>
+            <span class="chip chip--grape" data-reveal="pop">Control Flow</span>
+            <span class="chip chip--coral" data-reveal="pop">Loops</span>
+            <span class="chip chip--sky" data-reveal="pop">Functions</span>
+            <span class="chip chip--sun" data-reveal="pop">Turtle &amp; Visual Art</span>
+            <span class="chip chip--mint" data-reveal="pop">Randomness</span>
+            <span class="chip chip--grape" data-reveal="pop">Lists</span>
+            <span class="chip chip--coral" data-reveal="pop">Game Logic</span>
+            <span class="chip chip--sky" data-reveal="pop">Debugging</span>
+            <span class="chip chip--sun" data-reveal="pop">Code Reading</span>
+            <span class="chip chip--mint" data-reveal="pop">Project Design</span>
+            <span class="chip chip--grape" data-reveal="pop">Toolbox</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FREE TOOLS ================= -->
+      <section class="section section--white" id="tools">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>Free tools</p>
+            <h2 class="h2" data-reveal style="--i:1">Code in your browser. <span class="mark">No downloads.</span></h2>
+          </div>
+          <div class="tools" data-stagger>
+            <a class="tool tool--kids" data-reveal="pop" href="https://hsteenstra.github.io/codeformekids/" target="_blank" rel="noreferrer">
+              <span class="tool__kicker">Code For ME Kids &middot; Elementary &amp; up</span>
+              <h3>Build robots. Learn real code.</h3>
+              <p>Snap blocks, see them turn into Python, steer your own robot, then make your own games.</p>
+              <ul class="tool__list">
+                <li>1 Snap blocks</li><li>2 See the text</li><li>3 Plan it</li><li>4 Write Python</li><li>5 Make games</li>
+              </ul>
+              <span class="btn btn--primary">Visit Code For ME Kids <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              <div class="tool__art" aria-hidden="true">
+                <div class="bot">
+                  <div class="bot__antenna"></div>
+                  <div class="bot__head"><span class="bot__eye bot__eye--l"></span><span class="bot__eye bot__eye--r"></span><span class="bot__mouth"></span></div>
+                  <div class="bot__body"></div>
+                </div>
+              </div>
+            </a>
+            <a class="tool tool--sandbox" data-reveal="pop" href="https://hsteenstra.github.io/sandbox/" target="_blank" rel="noreferrer">
+              <span class="tool__kicker">Python Sandbox &middot; Middle school &amp; up</span>
+              <h3>Learn Python. Build anything.</h3>
+              <p>Write code, press Run, and see it work. Stuck? Ask Byte for a hint.</p>
+              <ul class="tool__list">
+                <li>Hello, world</li><li>Loops &amp; math</li><li>Drawing shapes</li><li>Tiny game</li>
+              </ul>
+              <span class="btn btn--primary">Open the Sandbox <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              <img class="tool__art" src="assets/byte.png" alt="" width="364" height="428" loading="lazy" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TEXTBOOK ================= -->
+      <section class="section" id="textbook">
+        <div class="container book">
+          <div class="book__stack" aria-label="Photos of the Code For ME textbook">
+            <figure data-parallax="0.04"><img src="assets/web/pic2.jpg" alt="The Code For ME textbook" width="537" height="828" loading="lazy" /></figure>
+            <figure data-parallax="0.12"><img src="assets/web/pic1.jpg" alt="Reading the Code For ME textbook outside" width="530" height="828" loading="lazy" /></figure>
+            <figure data-parallax="0.08"><img src="assets/web/pic8.jpg" alt="The Code For ME textbook up close" width="536" height="828" loading="lazy" /></figure>
+            <p class="book__credit">Photos by <a class="text-link" href="https://instagram.com/melrose_photos10" target="_blank" rel="noreferrer">@melrose_photos10</a></p>
+          </div>
+
+          <div>
+            <p class="eyebrow" data-reveal>For teachers &middot; The textbook</p>
+            <h2 class="h2" data-reveal style="--i:1">Run a 5-day Python camp. <span class="mark">Anywhere.</span></h2>
+            <p class="lead" data-reveal style="--i:2;margin-top:18px">Step-by-step lessons and activities, written for teachers who have never coded before.</p>
+            <div class="book__facts" data-stagger>
+              <div data-reveal="pop"><strong>5</strong><span>days of lessons</span></div>
+              <div data-reveal="pop"><strong>12+</strong><span>student ages</span></div>
+              <div data-reveal="pop"><strong>0</strong><span>experience needed</span></div>
+            </div>
+            <p class="book__prices" data-reveal>
+              <strong>Digital PDF: $10</strong>, instant access<br />
+              <strong>Printed copy: $20</strong> + shipping
+            </p>
+            <a class="btn btn--primary" data-reveal href="https://payhip.com/CodeForME" target="_blank" rel="noreferrer">Buy the textbook <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PRESS ================= -->
+      <section class="section section--accent wave-top">
+        <div class="container press">
+          <div class="press__mark" aria-hidden="true" data-reveal="left">&ldquo;</div>
+          <div>
+            <p class="eyebrow eyebrow--light" data-reveal>As seen in Maine Public</p>
+            <blockquote data-reveal style="--i:1">After finding few resources in her community, a Bath 16-year-old started her own coding camp.</blockquote>
+            <cite data-reveal style="--i:2">Maine Public, August 20, 2026</cite>
+            <a class="btn btn--ghost-light" data-reveal style="--i:3" href="https://www.mainepublic.org/education-news/2026-08-20/after-finding-few-resources-in-her-community-a-bath-16-year-old-started-her-own-coding-camp" target="_blank" rel="noreferrer">Read the story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FOUNDER ================= -->
+      <section class="section">
+        <div class="container founder">
+          <div class="founder__photo" data-reveal="left">
+            <img src="assets/web/portrait.jpg" alt="Harper Steenstra, founder of Code For ME" width="708" height="684" loading="lazy" data-parallax="0.05" />
+          </div>
+          <div>
+            <p class="eyebrow" data-reveal>Meet the founder</p>
+            <blockquote data-reveal style="--i:1">&ldquo;When I was learning to code, it was hard to find beginner-friendly resources that didn't cost money or require traveling.&rdquo;</blockquote>
+            <p data-reveal style="--i:2">
+              Hi! I'm Harper Steenstra, a high school student at Morse High School. I fell in love with coding in
+              third grade, dragging colorful blocks across the screen. When that class ended, there was nowhere
+              else to learn.
+            </p>
+            <p data-reveal style="--i:3">
+              So I built Code For ME: everything a beginner needs, all in one place, right here in Maine.
+            </p>
+            <p class="sig" data-reveal>Harper</p>
+            <a class="btn btn--outline" data-reveal href="meet-the-team.html">Meet the team <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= VOICES ================= -->
+      <section class="section section--sky">
+        <div class="container">
+          <div class="voices__head">
+            <div>
+              <p class="eyebrow" data-reveal>Student voices</p>
+              <h2 class="h2" data-reveal style="--i:1">What coders are saying.</h2>
+            </div>
+            <div class="voices__controls" data-reveal>
+              <button class="round-btn" type="button" data-voices="prev" aria-label="Previous quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+              <button class="round-btn" type="button" data-voices="next" aria-label="Next quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+          <div class="voices__track" tabindex="0" aria-label="Quotes from students and families" data-stagger>
+            <figure class="voice" data-reveal="pop">
+              <blockquote>Before this week I was only able to do Scratch. I am excited to use Python in real world scenarios.</blockquote>
+              <figcaption>Code For ME student</figcaption>
+            </figure>
+            <figure class="voice" data-reveal="pop">
+              <blockquote>Thank you so much for teaching the coding class. I had so much fun and learned a lot!</blockquote>
+              <figcaption>Code For ME student</figcaption>
+            </figure>
+            <figure class="voice" data-reveal="pop">
+              <blockquote>Thank you so much for putting on this program.</blockquote>
+              <figcaption>Parent of a 6th grader</figcaption>
+            </figure>
+            <figure class="voice voice--code" data-reveal="pop">
+              <blockquote>print("Harper is amazing")</blockquote>
+              <figcaption>Code For ME student</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PHOTOS (pinned horizontal scroll) ================= -->
+      <section class="hscroll" aria-label="Photos from camp">
+        <div class="hscroll__sticky">
+          <div class="container hscroll__head">
+            <p class="eyebrow eyebrow--light">Moments</p>
+            <h2 class="h2">Inside a Code For ME camp.</h2>
+          </div>
+          <div class="hscroll__track">
+            <figure><img src="assets/web/IMG_0033.jpg" alt="Harper presenting a Code For ME quiz to the class" width="1400" height="1050" loading="lazy" /><figcaption>Kicking off camp with a class quiz</figcaption></figure>
+            <figure><img src="assets/web/unnamed.jpg" alt="Students writing Python on laptops" width="1280" height="629" loading="lazy" /><figcaption>Writing real Python on day one</figcaption></figure>
+            <figure><img src="assets/web/unnamed-2.jpg" alt="Harper helping a student at a laptop" width="1280" height="1296" loading="lazy" /><figcaption>One-on-one help</figcaption></figure>
+            <figure><img src="assets/web/IMG_2579.jpg" alt="A student presenting code to the class" width="1400" height="1050" loading="lazy" /><figcaption>Students sharing their code</figcaption></figure>
+            <figure><img src="assets/web/unnamed-1.jpg" alt="Two students presenting their project" width="1280" height="629" loading="lazy" /><figcaption>Presenting projects</figcaption></figure>
+            <figure><img src="assets/web/IMG_0044.jpg" alt="Harper congratulating a student" width="1400" height="1050" loading="lazy" /><figcaption>Celebrating every coder</figcaption></figure>
+          </div>
+          <div class="hscroll__bar" aria-hidden="true"><span></span></div>
+          <p class="container hscroll__hint">Swipe to see more</p>
+        </div>
+      </section>
+
+      <!-- ================= CTA ================= -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta" data-reveal="scale">
+            <p class="eyebrow">Stay in the loop</p>
+            <h2 class="h2">New lessons and camp dates, first.</h2>
+            <p>Join our email list and we'll let you know when something new is ready.</p>
+            <div class="cta__actions">
+              <a class="btn btn--dark" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join our list <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+              <a class="btn btn--outline" href="mailto:codeformaine@gmail.com">Email us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div>
+            <a class="brand" href="index.html">
+              <img src="assets/logo.png" alt="" width="42" height="42" />
+              <span>Code For ME</span>
+            </a>
+            <p>Free coding resources for students and teachers. For local. From local. Made in Bath, Maine.</p>
+          </div>
+          <div>
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index.html#start">Find where to start</a></li>
+              <li><a href="index.html#workbook">The Workbook</a></li>
+              <li><a href="meet-the-team.html">Our Team</a></li>
+              <li><a href="photo-gallery.html">News &amp; Newsletters</a></li>
+              <li><a href="articles/history-of-python.html">The History of Python</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Free tools</h4>
+            <ul>
+              <li><a href="https://hsteenstra.github.io/codeformekids/" target="_blank" rel="noreferrer">Code For ME Kids</a></li>
+              <li><a href="https://hsteenstra.github.io/sandbox/" target="_blank" rel="noreferrer">Python Sandbox</a></li>
+              <li><a href="https://hsteenstra.github.io/workbook/" target="_blank" rel="noreferrer">Student Workbook</a></li>
+              <li><a href="https://hsteenstra.github.io/teacherworksheet/" target="_blank" rel="noreferrer">Teacher Workbook</a></li>
+              <li><a href="learn.html">CodeCourse</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></li>
+              <li><a href="https://instagram.com/codeformaine" target="_blank" rel="noreferrer">Instagram @codeformaine</a></li>
+              <li><a href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank" rel="noreferrer">Join our email list</a></li>
+              <li><a href="https://payhip.com/CodeForME" target="_blank" rel="noreferrer">Shop our books</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>&copy; 2026 Code For ME</span>
+          <span>Empowering Maine's youth, one line at a time.</span>
+        </div>
+      </div>
+    </footer>
+
+    <button class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+    <script src="site.js"></script>
+  </body>
+</html>
