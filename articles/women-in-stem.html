@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code For ME - [Article Title]</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; line-height:1.7; background:#fdfdfd; color:#222; }
+
+    /* HEADER */
+    header { padding:20px 0; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.05); }
+    .navbar { display:flex; justify-content:space-between; align-items:center; max-width:1200px; margin:auto; padding:0 20px; }
+    .navbar .brand { display:flex; align-items:center; gap:10px; font-family:'Outfit', sans-serif; font-weight:700; font-size:1.2em; text-decoration:none; color:#1a73e8; }
+    .nav-links a { margin-left:20px; text-decoration:none; color:#555; font-weight:600; }
+    .nav-cta { background:#1a73e8; color:#fff; padding:8px 16px; border-radius:5px; text-decoration:none; font-weight:600; }
+
+    /* ARTICLE */
+    .article-container { max-width:900px; margin:60px auto; padding:0 20px; }
+    .article-category { text-transform:uppercase; color:#888; font-size:0.85em; letter-spacing:1px; margin-bottom:10px; }
+    .article-title { font-family:'Outfit', sans-serif; font-weight:700; font-size:2.8em; margin-bottom:15px; color:#1a73e8; }
+    .article-subtitle { font-size:1.2em; color:#555; margin-bottom:15px; }
+    .article-meta { font-size:0.9em; color:#888; margin-bottom:40px; }
+
+    .article-body p { margin-bottom:20px; font-size:1.05em; }
+    .article-body blockquote { border-left:4px solid #1a73e8; padding-left:20px; margin:30px 0; font-style:italic; background:#f5f7fa; border-radius:6px; color:#555; }
+    .article-body pre { background:#f5f7fa; padding:20px; border-radius:10px; overflow-x:auto; margin-bottom:25px; }
+    .article-body code { font-family:'Courier New', monospace; color:#1a73e8; }
+
+    .related-articles { margin-top:60px; padding-top:20px; border-top:1px solid #eee; }
+    .related-articles h2 { font-size:1.8em; margin-bottom:20px; color:#222; }
+    .related-articles ul { list-style:none; padding-left:0; }
+    .related-articles li { margin-bottom:15px; }
+    .related-articles a { text-decoration:none; color:#1a73e8; font-weight:600; transition:color 0.3s; }
+    .related-articles a:hover { color:#155ab6; }
+
+    /* FOOTER */
+    footer { background:#f9f9f9; padding:50px 20px; }
+    .footer-grid { display:flex; flex-wrap:wrap; gap:30px; max-width:1200px; margin:auto; }
+    .footer-grid div { flex:1; min-width:200px; }
+    .footer h4 { margin-bottom:12px; font-weight:600; }
+    .footer a { color:#1a73e8; text-decoration:none; }
+    .footer a:hover { text-decoration:underline; }
+
+    @media(max-width:600px) { 
+      .article-title { font-size:2em; } 
+      .article-subtitle { font-size:1em; } 
+      .navbar { flex-direction:column; gap:10px; } 
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.png" alt="Code For ME logo" style="width:40px;"> Code For ME
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="meet-the-team.html">Meet The Team</a>
+        <a href="photo-gallery.html">Gallery</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+      <a class="nav-cta" href="https://forms.gle/ZRRLeQ5z7N4fdeMA8" target="_blank">Join Our List</a>
+    </div>
+  </header>
+
+  <main class="article-container">
+    <p class="article-category">STEM & Coding</p>
+    <h1 class="article-title">[Article Title]</h1>
+    <p class="article-subtitle">[Optional Subtitle]</p>
+    <p class="article-meta">By <strong>[Author]</strong> | <time datetime="[YYYY-MM-DD]">[Month DD, YYYY]</time></p>
+
+    <section class="article-body">
+      <p>[First paragraph of article]</p>
+      <p>[Second paragraph]</p>
+      <blockquote>"[Highlight quote from article]"</blockquote>
+      <p>[More content…]</p>
+      <pre><code>// Code snippet example
+print("Hello, Code For ME!")</code></pre>
+    </section>
+
+    <section class="related-articles">
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="cs-careers.html">CS Careers</a></li>
+        <li><a href="history-of-python.html">History of Python</a></li>
+        <li><a href="women-in-stem.html">Women in STEM</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Code For ME logo" style="width:50px; margin-bottom:10px;">
+        <p>Free Python Coding Camp For Students. For Local. From Local.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:codeformaine@gmail.com">codeformaine@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <p><a href="resources/what-is-python.html">What Is Python?</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
